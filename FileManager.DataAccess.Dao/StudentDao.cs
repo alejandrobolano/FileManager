@@ -11,7 +11,8 @@ namespace FileManager.DataAccess.Dao
     {
         public Student Add(Student student)
         {
-            throw new NotImplementedException();
+            ITxtFile iTxtFile = new TxtFile();
+            return iTxtFile.WriteTxt(student);
         }
     }
 }
