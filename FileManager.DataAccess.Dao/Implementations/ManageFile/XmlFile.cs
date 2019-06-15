@@ -25,8 +25,7 @@ namespace FileManager.DataAccess.Dao
         }
 
         public void Add(Student student)
-        {
-            
+        {            
             using (XmlTextWriter writer = new XmlTextWriter(Helper.NameXml, Encoding.UTF8))
             { 
                  writer.Formatting = Formatting.Indented;
