@@ -11,6 +11,14 @@ Firstly, you can put id, name, surname and date of birth of student. Then, that 
 
 For deploy this app, is necessary have a pc with small RAM, around 128MB and hard disk capacity of 256MB. Also, you have installed .NET Framework 4.6.2
 
+### Development
+
+Code developed with [Abstract Factory](https://refactoring.guru/design-patterns/abstract-factory), with [example in c#](https://refactoring.guru/design-patterns/abstract-factory/csharp/example)
+Command for version control [Git](https://www.git-scm.com/docs/git/1.7.7)
+Read and write Json with .Net, [Newtonsoft.Json](https://www.luisllamas.es/crear-y-leer-ficheros-json-facilmente-en-c-con-jsonnet/)
+...more
+
+
 ## Tests ⚙️
 
 The app was tested with MSTestv2.
