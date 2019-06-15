@@ -10,8 +10,7 @@ using FileManager.Common.Models.Util;
 namespace FileManager.DataAccess.Dao
 {
     public class TxtFile : IManageFile
-    {
-        
+    {        
         public void Add(Student student)
         {
             StringBuilder studentString = new StringBuilder();
@@ -30,13 +29,16 @@ namespace FileManager.DataAccess.Dao
             }
             catch (Exception)
             {
+
                 throw new NotImplementedException();
             }
         }
         public Student Get(int studentId)
         {
-            throw new NotImplementedException();
+            List<string> lines = File.ReadLines(Helper.NameTxt).ToList();
+            return Helper.ConvertStringToStudent(lines.Where(s => s.StartsWith(Convert.ToString(studentId))).FirstOrDefault());          
         }
+
         void Write(string logMessage, string message, TextWriter w)
         {
             if (!logMessage.Equals(""))
@@ -44,13 +46,6 @@ namespace FileManager.DataAccess.Dao
                 w.WriteLine("{0}", logMessage);
             }            
             w.WriteLine("{0}", message);
-        }
-        public string Read()
-        {
-            using (StreamReader r = File.OpenText(Helper.NameTxt))
-            {
-                return Read(r);
-            }
         }
         string Read(StreamReader r)
         {
