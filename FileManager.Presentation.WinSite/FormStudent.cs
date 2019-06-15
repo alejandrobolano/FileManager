@@ -35,19 +35,19 @@ namespace FileManager.Presentation.WinSite
             student.Name = textName.Text;
             student.Surname = textSurname.Text;
             student.DateOfBirth = Convert.ToDateTime(textDateOfBirth.Text);
-            iStudentDao.Add(student, "TXT");
 
-        }
-                
-        private void ButtonSaveXml_Click(object sender, EventArgs e)
-        {
-            IStudentDao iStudentDao = new StudentDao();
-            Student student = new Student();
-            student.StudentId = Convert.ToInt32(textStudentId.Text);
-            student.Name = textName.Text;
-            student.Surname = textSurname.Text;
-            student.DateOfBirth = Convert.ToDateTime(textDateOfBirth.Text);
-            iStudentDao.Add(student, "XML");
+            if (radioButtonJson.Checked)
+            {
+                iStudentDao.Add(student, "JSON");
+            }
+            if (radioButtonXML.Checked)
+            {
+                iStudentDao.Add(student, "XML");
+            }
+            if (radioButtonTxt.Checked)
+            {
+                iStudentDao.Add(student, "TXT");
+            }
 
         }
 
@@ -62,21 +62,6 @@ namespace FileManager.Presentation.WinSite
             }
         }
 
-        private void ButtonSaveJson_Click(object sender, EventArgs e)
-        {
-            IStudentDao iStudentDao = new StudentDao();
-            Student student = new Student();
-            student.StudentId = Convert.ToInt32(textStudentId.Text);
-            student.Name = textName.Text;
-            student.Surname = textSurname.Text;
-            student.DateOfBirth = Convert.ToDateTime(textDateOfBirth.Text);
-
-
-            if (radioButtonJson.Checked)
-            {
-                iStudentDao.Add(student, "JSON");
-            }
-
-        }
+       
     }
 }

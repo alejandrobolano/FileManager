@@ -12,7 +12,7 @@ namespace FileManager.DataAccess.Dao
     public class TxtFile : IManageFile
     {
         
-        public void Insert(Student student)
+        public void Add(Student student)
         {
             StringBuilder studentString = new StringBuilder();
             try
@@ -30,16 +30,12 @@ namespace FileManager.DataAccess.Dao
             }
             catch (Exception)
             {
-
                 throw new NotImplementedException();
             }
         }
-        public string Read()
+        public Student Get(int studentId)
         {
-            using (StreamReader r = File.OpenText(Helper.NameTxt))
-            {
-               return Read(r);
-            }
+            throw new NotImplementedException();
         }
         void Write(string logMessage, string message, TextWriter w)
         {
@@ -48,6 +44,13 @@ namespace FileManager.DataAccess.Dao
                 w.WriteLine("{0}", logMessage);
             }            
             w.WriteLine("{0}", message);
+        }
+        public string Read()
+        {
+            using (StreamReader r = File.OpenText(Helper.NameTxt))
+            {
+                return Read(r);
+            }
         }
         string Read(StreamReader r)
         {
@@ -60,9 +63,5 @@ namespace FileManager.DataAccess.Dao
             return final;
         }
 
-        public Student Get(int studentId)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -13,17 +13,16 @@ namespace FileManager.DataAccess.Dao
 {
     public class XmlFile : IManageFile
     {
-        XmlDocument documento;
-
         public Student Get(int studentId)
         {
             throw new NotImplementedException();
         }
 
-        public void Insert(Student student)
+        public void Add(Student student)
         {
+            
             using (XmlTextWriter writer = new XmlTextWriter(Helper.NameXml, Encoding.UTF8))
-            {
+            { 
                  writer.Formatting = Formatting.Indented;
                  ///writer.WriteStartDocument();
                  writer.WriteStartElement("Student");

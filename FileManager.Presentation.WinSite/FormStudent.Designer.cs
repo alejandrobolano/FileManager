@@ -37,8 +37,6 @@
             this.textName = new System.Windows.Forms.TextBox();
             this.textSurname = new System.Windows.Forms.TextBox();
             this.textDateOfBirth = new System.Windows.Forms.TextBox();
-            this.buttonSaveXml = new System.Windows.Forms.Button();
-            this.buttonSaveJson = new System.Windows.Forms.Button();
             this.buttonClearFields = new System.Windows.Forms.Button();
             this.radioButtonTxt = new System.Windows.Forms.RadioButton();
             this.radioButtonXML = new System.Windows.Forms.RadioButton();
@@ -51,7 +49,7 @@
             this.buttonSaveTxt.Name = "buttonSaveTxt";
             this.buttonSaveTxt.Size = new System.Drawing.Size(143, 45);
             this.buttonSaveTxt.TabIndex = 0;
-            this.buttonSaveTxt.Text = "Save TXT";
+            this.buttonSaveTxt.Text = "Save";
             this.buttonSaveTxt.UseVisualStyleBackColor = true;
             this.buttonSaveTxt.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
@@ -119,31 +117,11 @@
             this.textDateOfBirth.Size = new System.Drawing.Size(314, 26);
             this.textDateOfBirth.TabIndex = 8;
             // 
-            // buttonSaveXml
-            // 
-            this.buttonSaveXml.Location = new System.Drawing.Point(179, 209);
-            this.buttonSaveXml.Name = "buttonSaveXml";
-            this.buttonSaveXml.Size = new System.Drawing.Size(131, 42);
-            this.buttonSaveXml.TabIndex = 9;
-            this.buttonSaveXml.Text = "Save XML";
-            this.buttonSaveXml.UseVisualStyleBackColor = true;
-            this.buttonSaveXml.Click += new System.EventHandler(this.ButtonSaveXml_Click);
-            // 
-            // buttonSaveJson
-            // 
-            this.buttonSaveJson.Location = new System.Drawing.Point(37, 209);
-            this.buttonSaveJson.Name = "buttonSaveJson";
-            this.buttonSaveJson.Size = new System.Drawing.Size(116, 42);
-            this.buttonSaveJson.TabIndex = 10;
-            this.buttonSaveJson.Text = "Save JSON";
-            this.buttonSaveJson.UseVisualStyleBackColor = true;
-            this.buttonSaveJson.Click += new System.EventHandler(this.ButtonSaveJson_Click);
-            // 
             // buttonClearFields
             // 
-            this.buttonClearFields.Location = new System.Drawing.Point(179, 269);
+            this.buttonClearFields.Location = new System.Drawing.Point(329, 269);
             this.buttonClearFields.Name = "buttonClearFields";
-            this.buttonClearFields.Size = new System.Drawing.Size(131, 41);
+            this.buttonClearFields.Size = new System.Drawing.Size(143, 43);
             this.buttonClearFields.TabIndex = 11;
             this.buttonClearFields.Text = "Clear Fields";
             this.buttonClearFields.UseVisualStyleBackColor = true;
@@ -152,7 +130,7 @@
             // radioButtonTxt
             // 
             this.radioButtonTxt.AutoSize = true;
-            this.radioButtonTxt.Location = new System.Drawing.Point(37, 269);
+            this.radioButtonTxt.Location = new System.Drawing.Point(158, 199);
             this.radioButtonTxt.Name = "radioButtonTxt";
             this.radioButtonTxt.Size = new System.Drawing.Size(63, 24);
             this.radioButtonTxt.TabIndex = 12;
@@ -163,7 +141,7 @@
             // radioButtonXML
             // 
             this.radioButtonXML.AutoSize = true;
-            this.radioButtonXML.Location = new System.Drawing.Point(37, 300);
+            this.radioButtonXML.Location = new System.Drawing.Point(158, 239);
             this.radioButtonXML.Name = "radioButtonXML";
             this.radioButtonXML.Size = new System.Drawing.Size(67, 24);
             this.radioButtonXML.TabIndex = 13;
@@ -174,7 +152,7 @@
             // radioButtonJson
             // 
             this.radioButtonJson.AutoSize = true;
-            this.radioButtonJson.Location = new System.Drawing.Point(37, 330);
+            this.radioButtonJson.Location = new System.Drawing.Point(158, 278);
             this.radioButtonJson.Name = "radioButtonJson";
             this.radioButtonJson.Size = new System.Drawing.Size(76, 24);
             this.radioButtonJson.TabIndex = 14;
@@ -186,13 +164,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(525, 408);
+            this.ClientSize = new System.Drawing.Size(525, 353);
             this.Controls.Add(this.radioButtonJson);
             this.Controls.Add(this.radioButtonXML);
             this.Controls.Add(this.radioButtonTxt);
             this.Controls.Add(this.buttonClearFields);
-            this.Controls.Add(this.buttonSaveJson);
-            this.Controls.Add(this.buttonSaveXml);
             this.Controls.Add(this.textDateOfBirth);
             this.Controls.Add(this.textSurname);
             this.Controls.Add(this.textName);
@@ -221,8 +197,6 @@
         private System.Windows.Forms.TextBox textName;
         private System.Windows.Forms.TextBox textSurname;
         private System.Windows.Forms.TextBox textDateOfBirth;
-        private System.Windows.Forms.Button buttonSaveXml;
-        private System.Windows.Forms.Button buttonSaveJson;
         private System.Windows.Forms.Button buttonClearFields;
         private System.Windows.Forms.RadioButton radioButtonTxt;
         private System.Windows.Forms.RadioButton radioButtonXML;

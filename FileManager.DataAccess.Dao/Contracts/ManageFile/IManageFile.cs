@@ -9,7 +9,7 @@ namespace FileManager.DataAccess.Dao
 {
     public interface IManageFile
     {
-        void Insert(Student student);
+        void Add(Student student);
 
         Student Get(int studentId);
     }

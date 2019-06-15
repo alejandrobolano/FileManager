@@ -15,7 +15,7 @@ namespace FileManager.DataAccess.Dao
         public Student Add(Student student, string fileType)
         {
             var manageFile = GetManageFile(fileType);
-            manageFile.Insert(student);
+            manageFile.Add(student);
             return student;
             //return manageFile.Get(student.StudentId);
         }

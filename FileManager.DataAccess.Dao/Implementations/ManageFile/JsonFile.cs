@@ -14,10 +14,16 @@ namespace FileManager.DataAccess.Dao
     {
         public Student Get(int studentId)
         {
-            throw new NotImplementedException();
+            string path = Helper.NameJson;
+            using (StreamReader jsonStream = File.OpenText(path))
+            {
+                var json = jsonStream.ReadToEnd();
+                var students = JsonConvert.DeserializeObject<List<Student>>(json);
+                return students.Where(s => s.StudentId == studentId).FirstOrDefault();
+            }
         }
 
-        public void Insert(Student student)
+        public void Add(Student student)
         {
             string json = JsonConvert.SerializeObject(student);
             using (StreamWriter writer = File.AppendText(Helper.NameJson))
