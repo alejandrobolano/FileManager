@@ -9,9 +9,10 @@ using FileManager.Common.Models.Util;
 
 namespace FileManager.DataAccess.Dao
 {
-    class TxtFile : ITxtFile
+    public class TxtFile : IManageFile
     {
-        public Student WriteTxt(Student student)
+        
+        public void Insert(Student student)
         {
             StringBuilder studentString = new StringBuilder();
             try
@@ -21,9 +22,9 @@ namespace FileManager.DataAccess.Dao
                      .Append(student.Surname).Append(",")
                      .Append(Convert.ToString(student.DateOfBirth));
 
-                using (StreamWriter w = File.AppendText(Helper.NameTxt))
+                using (StreamWriter writer = File.AppendText(Helper.NameTxt))
                 {
-                    Write("", studentString.ToString(), w);
+                    Write("", studentString.ToString(), writer);
                 }
                 Helper.WriteLineConsole("File text created succesfull");
             }
@@ -32,11 +33,8 @@ namespace FileManager.DataAccess.Dao
 
                 throw new NotImplementedException();
             }
-
-            return ConvertStringToStudent(ReadTxt());
         }
-
-        public string ReadTxt()
+        public string Read()
         {
             using (StreamReader r = File.OpenText(Helper.NameTxt))
             {
@@ -51,7 +49,6 @@ namespace FileManager.DataAccess.Dao
             }            
             w.WriteLine("{0}", message);
         }
-
         string Read(StreamReader r)
         {
             string line;
@@ -63,17 +60,9 @@ namespace FileManager.DataAccess.Dao
             return final;
         }
 
-        Student ConvertStringToStudent(string stream)
+        public Student Get(int studentId)
         {
-            Student student = new Student();
-            string[] streamList = stream.Split(',');
-            student.StudentId = Convert.ToInt32(streamList[0]);
-            student.Name = streamList[1];
-            student.Surname = streamList[2];
-            student.DateOfBirth = Convert.ToDateTime(streamList[3]);
-
-            return student;
+            throw new NotImplementedException();
         }
-
     }
 }

@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,11 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IStudentDao.cs" />
-    <Compile Include="ITxtFile.cs" />
-    <Compile Include="StudentDao.cs" />
+    <Compile Include="Implementations\Factory\AbstractFactory.cs" />
+    <Compile Include="Contracts\Factory\IAbstractFactory.cs" />
+    <Compile Include="Contracts\ManageFile\IManageFile.cs" />
+    <Compile Include="Contracts\Dao\IStudentDao.cs" />
+    <Compile Include="Implementations\ManageFile\JsonFile.cs" />
+    <Compile Include="Implementations\Dao\StudentDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TxtFile.cs" />
+    <Compile Include="Implementations\ManageFile\TxtFile.cs" />
+    <Compile Include="Implementations\ManageFile\XmlFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FileManager.Common.Models\FileManager.Common.Models.csproj">
@@ -53,5 +60,9 @@
       <Name>FileManager.Common.Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

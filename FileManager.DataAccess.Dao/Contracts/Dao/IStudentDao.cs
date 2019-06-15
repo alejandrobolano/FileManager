@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace FileManager.DataAccess.Dao
 {
-    public interface ITxtFile
+    public interface IStudentDao
     {
-        Student WriteTxt(Student student);
-        string ReadTxt();
+        Student Add(Student student, string fileType);
     }
 }

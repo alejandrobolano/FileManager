@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace FileManager.DataAccess.Dao
 {
-    public interface IStudentDao
+    interface IAbstractFactory
     {
-        Student Add(Student student);
+        IManageFile CreateTxtFile();
+        IManageFile CreateXmlFile();
+        IManageFile CreateJsonFile();
     }
 }

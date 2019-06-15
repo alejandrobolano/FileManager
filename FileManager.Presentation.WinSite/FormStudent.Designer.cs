@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonSaveTxt = new System.Windows.Forms.Button();
             this.labelStudentId = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelSurname = new System.Windows.Forms.Label();
@@ -37,17 +37,23 @@
             this.textName = new System.Windows.Forms.TextBox();
             this.textSurname = new System.Windows.Forms.TextBox();
             this.textDateOfBirth = new System.Windows.Forms.TextBox();
+            this.buttonSaveXml = new System.Windows.Forms.Button();
+            this.buttonSaveJson = new System.Windows.Forms.Button();
+            this.buttonClearFields = new System.Windows.Forms.Button();
+            this.radioButtonTxt = new System.Windows.Forms.RadioButton();
+            this.radioButtonXML = new System.Windows.Forms.RadioButton();
+            this.radioButtonJson = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
-            // buttonSave
+            // buttonSaveTxt
             // 
-            this.buttonSave.Location = new System.Drawing.Point(329, 209);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(143, 45);
-            this.buttonSave.TabIndex = 0;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
+            this.buttonSaveTxt.Location = new System.Drawing.Point(329, 209);
+            this.buttonSaveTxt.Name = "buttonSaveTxt";
+            this.buttonSaveTxt.Size = new System.Drawing.Size(143, 45);
+            this.buttonSaveTxt.TabIndex = 0;
+            this.buttonSaveTxt.Text = "Save TXT";
+            this.buttonSaveTxt.UseVisualStyleBackColor = true;
+            this.buttonSaveTxt.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // labelStudentId
             // 
@@ -113,11 +119,80 @@
             this.textDateOfBirth.Size = new System.Drawing.Size(314, 26);
             this.textDateOfBirth.TabIndex = 8;
             // 
+            // buttonSaveXml
+            // 
+            this.buttonSaveXml.Location = new System.Drawing.Point(179, 209);
+            this.buttonSaveXml.Name = "buttonSaveXml";
+            this.buttonSaveXml.Size = new System.Drawing.Size(131, 42);
+            this.buttonSaveXml.TabIndex = 9;
+            this.buttonSaveXml.Text = "Save XML";
+            this.buttonSaveXml.UseVisualStyleBackColor = true;
+            this.buttonSaveXml.Click += new System.EventHandler(this.ButtonSaveXml_Click);
+            // 
+            // buttonSaveJson
+            // 
+            this.buttonSaveJson.Location = new System.Drawing.Point(37, 209);
+            this.buttonSaveJson.Name = "buttonSaveJson";
+            this.buttonSaveJson.Size = new System.Drawing.Size(116, 42);
+            this.buttonSaveJson.TabIndex = 10;
+            this.buttonSaveJson.Text = "Save JSON";
+            this.buttonSaveJson.UseVisualStyleBackColor = true;
+            this.buttonSaveJson.Click += new System.EventHandler(this.ButtonSaveJson_Click);
+            // 
+            // buttonClearFields
+            // 
+            this.buttonClearFields.Location = new System.Drawing.Point(179, 269);
+            this.buttonClearFields.Name = "buttonClearFields";
+            this.buttonClearFields.Size = new System.Drawing.Size(131, 41);
+            this.buttonClearFields.TabIndex = 11;
+            this.buttonClearFields.Text = "Clear Fields";
+            this.buttonClearFields.UseVisualStyleBackColor = true;
+            this.buttonClearFields.Click += new System.EventHandler(this.ButtonClearFields_Click);
+            // 
+            // radioButtonTxt
+            // 
+            this.radioButtonTxt.AutoSize = true;
+            this.radioButtonTxt.Location = new System.Drawing.Point(37, 269);
+            this.radioButtonTxt.Name = "radioButtonTxt";
+            this.radioButtonTxt.Size = new System.Drawing.Size(63, 24);
+            this.radioButtonTxt.TabIndex = 12;
+            this.radioButtonTxt.TabStop = true;
+            this.radioButtonTxt.Text = "TXT";
+            this.radioButtonTxt.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonXML
+            // 
+            this.radioButtonXML.AutoSize = true;
+            this.radioButtonXML.Location = new System.Drawing.Point(37, 300);
+            this.radioButtonXML.Name = "radioButtonXML";
+            this.radioButtonXML.Size = new System.Drawing.Size(67, 24);
+            this.radioButtonXML.TabIndex = 13;
+            this.radioButtonXML.TabStop = true;
+            this.radioButtonXML.Text = "XML";
+            this.radioButtonXML.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonJson
+            // 
+            this.radioButtonJson.AutoSize = true;
+            this.radioButtonJson.Location = new System.Drawing.Point(37, 330);
+            this.radioButtonJson.Name = "radioButtonJson";
+            this.radioButtonJson.Size = new System.Drawing.Size(76, 24);
+            this.radioButtonJson.TabIndex = 14;
+            this.radioButtonJson.TabStop = true;
+            this.radioButtonJson.Text = "JSON";
+            this.radioButtonJson.UseVisualStyleBackColor = true;
+            // 
             // FormStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 284);
+            this.ClientSize = new System.Drawing.Size(525, 408);
+            this.Controls.Add(this.radioButtonJson);
+            this.Controls.Add(this.radioButtonXML);
+            this.Controls.Add(this.radioButtonTxt);
+            this.Controls.Add(this.buttonClearFields);
+            this.Controls.Add(this.buttonSaveJson);
+            this.Controls.Add(this.buttonSaveXml);
             this.Controls.Add(this.textDateOfBirth);
             this.Controls.Add(this.textSurname);
             this.Controls.Add(this.textName);
@@ -126,7 +201,7 @@
             this.Controls.Add(this.labelSurname);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelStudentId);
-            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.buttonSaveTxt);
             this.Name = "FormStudent";
             this.Text = "Form Student";
             this.Load += new System.EventHandler(this.FormStudent_Load);
@@ -137,7 +212,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonSaveTxt;
         private System.Windows.Forms.Label labelStudentId;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelSurname;
@@ -146,6 +221,12 @@
         private System.Windows.Forms.TextBox textName;
         private System.Windows.Forms.TextBox textSurname;
         private System.Windows.Forms.TextBox textDateOfBirth;
+        private System.Windows.Forms.Button buttonSaveXml;
+        private System.Windows.Forms.Button buttonSaveJson;
+        private System.Windows.Forms.Button buttonClearFields;
+        private System.Windows.Forms.RadioButton radioButtonTxt;
+        private System.Windows.Forms.RadioButton radioButtonXML;
+        private System.Windows.Forms.RadioButton radioButtonJson;
     }
 }
 

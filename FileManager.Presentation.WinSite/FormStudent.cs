@@ -1,4 +1,5 @@
 ﻿using FileManager.Common.Models;
+using FileManager.Common.Models.Util;
 using FileManager.DataAccess.Dao;
 using System;
 using System.Collections.Generic;
@@ -9,16 +10,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace FileManager.Presentation.WinSite
 {
     public partial class FormStudent : Form
     {
-        public int StudentId;
-        public String Name;
-        public String Surname;
-        public String DateOfBirth;
-
+        
         public FormStudent()
         {
             InitializeComponent();
@@ -37,13 +35,23 @@ namespace FileManager.Presentation.WinSite
             student.Name = textName.Text;
             student.Surname = textSurname.Text;
             student.DateOfBirth = Convert.ToDateTime(textDateOfBirth.Text);
+            iStudentDao.Add(student, "TXT");
 
-            iStudentDao.Add(student);
+        }
+                
+        private void ButtonSaveXml_Click(object sender, EventArgs e)
+        {
+            IStudentDao iStudentDao = new StudentDao();
+            Student student = new Student();
+            student.StudentId = Convert.ToInt32(textStudentId.Text);
+            student.Name = textName.Text;
+            student.Surname = textSurname.Text;
+            student.DateOfBirth = Convert.ToDateTime(textDateOfBirth.Text);
+            iStudentDao.Add(student, "XML");
 
-            ClearFields();
         }
 
-        private void ClearFields()
+        private void ButtonClearFields_Click(object sender, EventArgs e)
         {
             foreach (var control in Controls)
             {
@@ -54,5 +62,21 @@ namespace FileManager.Presentation.WinSite
             }
         }
 
+        private void ButtonSaveJson_Click(object sender, EventArgs e)
+        {
+            IStudentDao iStudentDao = new StudentDao();
+            Student student = new Student();
+            student.StudentId = Convert.ToInt32(textStudentId.Text);
+            student.Name = textName.Text;
+            student.Surname = textSurname.Text;
+            student.DateOfBirth = Convert.ToDateTime(textDateOfBirth.Text);
+
+
+            if (radioButtonJson.Checked)
+            {
+                iStudentDao.Add(student, "JSON");
+            }
+
+        }
     }
 }
