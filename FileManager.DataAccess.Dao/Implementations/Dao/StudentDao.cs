@@ -16,7 +16,8 @@ namespace FileManager.DataAccess.Dao
         {
             var manageFile = GetManageFile(fileType);
             manageFile.Insert(student);
-            return manageFile.Get(student.StudentId);
+            return student;
+            //return manageFile.Get(student.StudentId);
         }
 
         private IManageFile GetManageFile(string fileType)

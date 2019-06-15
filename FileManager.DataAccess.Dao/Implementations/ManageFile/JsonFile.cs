@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,18 +19,12 @@ namespace FileManager.DataAccess.Dao
 
         public void Insert(Student student)
         {
-
-            /*var studen = new Student
-            {
-                StudentId = student.StudentId,
-                Name = student.Name,
-                Surname = student.Surname,
-                DateOfBirth = Convert.ToDateTime(student.DateOfBirth)
-            };
-            */
-
             string json = JsonConvert.SerializeObject(student);
-            System.IO.File.WriteAllText(Helper.NameJson, json);
+            using (StreamWriter writer = File.AppendText(Helper.NameJson))
+            {
+                writer.WriteLine("{0}", json);
+            }
+
         }
     }
 }
