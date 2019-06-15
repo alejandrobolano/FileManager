@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace FileManager.DataAccess.Dao
 {
@@ -15,7 +16,12 @@ namespace FileManager.DataAccess.Dao
     {
         public Student Get(int studentId)
         {
-            throw new NotImplementedException();
+            using (StreamReader reader = new StreamReader(Helper.NameXml))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Student>));
+                var students = (List<Student>)serializer.Deserialize(reader);
+                return students.Where(s => s.StudentId == studentId).FirstOrDefault();
+            }
         }
 
         public void Add(Student student)
