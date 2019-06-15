@@ -56,6 +56,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Implementations\ManageFile\JsonFileTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentDaoTests.cs" />
   </ItemGroup>
@@ -63,6 +64,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FileManager.Common.Models\FileManager.Common.Models.csproj">
+      <Project>{7E1F01DA-77AB-4959-B043-9254210CD53F}</Project>
+      <Name>FileManager.Common.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FileManager.DataAccess.Dao\FileManager.DataAccess.Dao.csproj">
       <Project>{058AE14B-5215-4CE2-89F7-48063367BD1A}</Project>
       <Name>FileManager.DataAccess.Dao</Name>

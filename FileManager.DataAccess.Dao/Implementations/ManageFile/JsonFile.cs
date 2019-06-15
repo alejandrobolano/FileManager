@@ -25,12 +25,35 @@ namespace FileManager.DataAccess.Dao
 
         public void Add(Student student)
         {
-            string json = JsonConvert.SerializeObject(student);
+            var students = GetAll();
+            students.Add(student);
+            if (File.Exists(Helper.NameJson))
+            {
+                File.Delete(Helper.NameJson);
+            }            
             using (StreamWriter writer = File.AppendText(Helper.NameJson))
             {
-                writer.WriteLine("{0}", json);
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(writer, students);
             }
 
+        }
+
+        public List<Student> GetAll()
+        {
+            if (!File.Exists(Helper.NameJson))
+                return new List<Student>();
+            else
+            {
+                string path = Helper.NameJson;
+                using (StreamReader jsonStream = File.OpenText(path))
+                {
+                var json = jsonStream.ReadToEnd();
+                return JsonConvert.DeserializeObject<List<Student>>(json);
+                
+                }
+            }
+            
         }
     }
 }
