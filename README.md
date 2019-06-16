@@ -13,7 +13,8 @@ For deploy this app, is necessary have a pc with small RAM, around 128MB and har
 
 ### Development
 
-Code developed with [Abstract Factory](https://refactoring.guru/design-patterns/abstract-factory), with [example in c#](https://refactoring.guru/design-patterns/abstract-factory/csharp/example)
+Code developed with [Abstract Factory](https://refactoring.guru/design-patterns/abstract-factory), with [example in c#](https://refactoring.guru/design-patterns/abstract-factory/csharp/example).
+
 Command for version control [Git](https://www.git-scm.com/docs/git/1.7.7)
 Read and write Json with .Net, [Newtonsoft.Json](https://www.luisllamas.es/crear-y-leer-ficheros-json-facilmente-en-c-con-jsonnet/)
 ...more
@@ -30,5 +31,5 @@ The MSTest framework occupies a distinct position in this ecosystem, and is used
 
 ## Author ✒️
 
-Alejandro Bolaño ✌
+File Manager of Windows ✌
 With ❤️ by [Alejandro Bolano](https://github.com/alejandrobolano) 😊
