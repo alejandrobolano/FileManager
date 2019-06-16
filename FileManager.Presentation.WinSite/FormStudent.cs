@@ -38,15 +38,15 @@ namespace FileManager.Presentation.WinSite
 
             if (radioButtonJson.Checked)
             {
-                iStudentDao.Add(student, "JSON");
+                iStudentDao.Add(student, EnumType.JSON);
             }
             if (radioButtonXML.Checked)
             {
-                iStudentDao.Add(student, "XML");
+                iStudentDao.Add(student, EnumType.XML);
             }
             if (radioButtonTxt.Checked)
             {
-                iStudentDao.Add(student, "TXT");
+                iStudentDao.Add(student, EnumType.TXT);
             }
 
         }

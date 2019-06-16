@@ -11,7 +11,7 @@ namespace FileManager.DataAccess.Dao
 {
     public class TxtFile : IManageFile
     {        
-        public void Add(Student student)
+        public Student Add(Student student)
         {
             StringBuilder studentString = new StringBuilder();
             try
@@ -25,13 +25,17 @@ namespace FileManager.DataAccess.Dao
                 {
                     Write("", studentString.ToString(), writer);
                 }
-                Helper.WriteLineConsole("File text created succesfull");
+                Helper.WriteLineConsole("Add student " + student.Name + " to " + Helper.NameTxt + " succesfull");
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
-                throw new NotImplementedException();
+                using (StreamWriter w = File.AppendText("txtfile_log.txt"))
+                {
+                    Helper.Log(e.Message, student, w);
+                }
             }
+
+            return Get(student.StudentId);
         }
         public Student Get(int studentId)
         {

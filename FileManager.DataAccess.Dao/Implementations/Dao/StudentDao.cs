@@ -12,24 +12,22 @@ namespace FileManager.DataAccess.Dao
 {
     public class StudentDao : IStudentDao
     {
-        public Student Add(Student student, string fileType)
+        public Student Add(Student student, EnumType fileType)
         {
             var manageFile = GetManageFile(fileType);
-            manageFile.Add(student);
-            return student;
-            //return manageFile.Get(student.StudentId);
+            return manageFile.Add(student);
         }
 
-        private IManageFile GetManageFile(string fileType)
+        private IManageFile GetManageFile(EnumType fileType)
         {
             IAbstractFactory abstractFactory = new AbstractFactory();
             switch (fileType)
             {
-                case "TXT":
+                case EnumType.TXT:
                     {
                         return abstractFactory.CreateTxtFile();
                     }
-                case "XML":
+                case EnumType.XML:
                     {
                         return abstractFactory.CreateXmlFile();
                     }

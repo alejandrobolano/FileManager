@@ -116,6 +116,7 @@
             this.textDateOfBirth.Name = "textDateOfBirth";
             this.textDateOfBirth.Size = new System.Drawing.Size(314, 26);
             this.textDateOfBirth.TabIndex = 8;
+            this.textDateOfBirth.Text = "12/02/1992";
             // 
             // buttonClearFields
             // 
