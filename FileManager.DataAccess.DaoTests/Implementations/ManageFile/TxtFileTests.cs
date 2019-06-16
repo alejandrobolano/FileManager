@@ -10,22 +10,20 @@ using FileManager.Common.Models;
 namespace FileManager.DataAccess.Dao.Tests
 {
     [TestClass()]
-    public class XmlFileTests
+    public class TxtFileTests
     {
         IManageFile manageFile;
-
-        public XmlFileTests()
+        public TxtFileTests()
         {
-            manageFile = new XmlFile();
+            manageFile = new TxtFile();
         }
-
         [TestMethod()]
         public void AddTest()
         {
             Student student = new Student()
             {
-                StudentId = 84,
-                Name = "Alexander",
+                StudentId = 35,
+                Name = "Manuel",
                 Surname = "Ale",
                 DateOfBirth = Convert.ToDateTime("20/02/2000")
             };
