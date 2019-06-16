@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace FileManager.Common.Models.Util
 {
-    public enum TypeFile
+    public enum EnumType
     {
-        TXT,
-        JSON,
-        XML
+            TXT,
+            JSON,
+            XML
     }
 }

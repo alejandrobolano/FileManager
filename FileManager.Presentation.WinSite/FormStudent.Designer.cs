@@ -95,6 +95,7 @@
             this.textStudentId.Name = "textStudentId";
             this.textStudentId.Size = new System.Drawing.Size(314, 26);
             this.textStudentId.TabIndex = 5;
+            this.textStudentId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextStudentId_KeyPress);
             // 
             // textName
             // 
@@ -116,6 +117,8 @@
             this.textDateOfBirth.Name = "textDateOfBirth";
             this.textDateOfBirth.Size = new System.Drawing.Size(314, 26);
             this.textDateOfBirth.TabIndex = 8;
+            this.textDateOfBirth.Text = "12/02/1992";
+            this.textDateOfBirth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextDateOfBirth_KeyPress);
             // 
             // buttonClearFields
             // 
@@ -152,6 +155,7 @@
             // radioButtonJson
             // 
             this.radioButtonJson.AutoSize = true;
+            this.radioButtonJson.Checked = true;
             this.radioButtonJson.Location = new System.Drawing.Point(158, 278);
             this.radioButtonJson.Name = "radioButtonJson";
             this.radioButtonJson.Size = new System.Drawing.Size(76, 24);

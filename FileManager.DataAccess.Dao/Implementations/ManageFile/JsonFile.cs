@@ -23,7 +23,7 @@ namespace FileManager.DataAccess.Dao
             }
         }
 
-        public void Add(Student student)
+        public Student Add(Student student)
         {
             var students = GetAll();
             students.Add(student);
@@ -35,7 +35,10 @@ namespace FileManager.DataAccess.Dao
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(writer, students);
+                Helper.WriteLineConsole("Add student " + student.Name + " to " + Helper.NameJson + " succesfull");
             }
+
+            return Get(student.StudentId);
 
         }
 
