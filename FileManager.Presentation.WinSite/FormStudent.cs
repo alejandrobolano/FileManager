@@ -29,25 +29,29 @@ namespace FileManager.Presentation.WinSite
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            IStudentDao iStudentDao = new StudentDao();
-            Student student = new Student();
-            student.StudentId = Convert.ToInt32(textStudentId.Text);
-            student.Name = textName.Text;
-            student.Surname = textSurname.Text;
-            student.DateOfBirth = Convert.ToDateTime(textDateOfBirth.Text);
+            if(!CheckEmptyFields())
+            {
+                IStudentDao iStudentDao = new StudentDao();
+                Student student = new Student();
+                student.StudentId = Convert.ToInt32(textStudentId.Text);
+                student.Name = textName.Text;
+                student.Surname = textSurname.Text;
+                student.DateOfBirth = Convert.ToDateTime(textDateOfBirth.Text);
 
-            if (radioButtonJson.Checked)
-            {
-                iStudentDao.Add(student, EnumType.JSON);
+                if (radioButtonJson.Checked)
+                {
+                    iStudentDao.Add(student, EnumType.JSON);
+                }
+                if (radioButtonXML.Checked)
+                {
+                    iStudentDao.Add(student, EnumType.XML);
+                }
+                if (radioButtonTxt.Checked)
+                {
+                    iStudentDao.Add(student, EnumType.TXT);
+                }
             }
-            if (radioButtonXML.Checked)
-            {
-                iStudentDao.Add(student, EnumType.XML);
-            }
-            if (radioButtonTxt.Checked)
-            {
-                iStudentDao.Add(student, EnumType.TXT);
-            }
+            
 
         }
 
@@ -62,6 +66,37 @@ namespace FileManager.Presentation.WinSite
             }
         }
 
-       
+        private bool CheckEmptyFields()
+        {
+            bool b = false;
+            foreach (var control in Controls)
+            {
+                if (control is TextBox)
+                {
+                    if(((TextBox)control).Text.Equals(""))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return b;
+        }
+
+        private void TextStudentId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TextDateOfBirth_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '/'))
+            {
+                e.Handled = true;
+            }
+           
+        }
     }
 }
