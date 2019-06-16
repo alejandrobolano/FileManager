@@ -155,6 +155,7 @@
             // radioButtonJson
             // 
             this.radioButtonJson.AutoSize = true;
+            this.radioButtonJson.Checked = true;
             this.radioButtonJson.Location = new System.Drawing.Point(158, 278);
             this.radioButtonJson.Name = "radioButtonJson";
             this.radioButtonJson.Size = new System.Drawing.Size(76, 24);
