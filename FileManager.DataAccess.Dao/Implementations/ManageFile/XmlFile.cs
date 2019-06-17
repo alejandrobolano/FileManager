@@ -79,11 +79,13 @@ namespace FileManager.DataAccess.Dao
                 studentList.Add(student);
 
             }
-            var result = from x in studentList
+            /*
+             * var result = from x in studentList
                         where x.StudentId == studentId
                         select x;
-
-            return result.FirstOrDefault();
+            */
+            //result.FirstOrDefault();
+            return studentList.Where(x => x.StudentId == studentId).FirstOrDefault();
         }
 
 
