@@ -24,8 +24,8 @@ namespace FileManager.DataAccess.Dao.Tests
         {
             Student student = new Student()
             {
-                StudentId = 84,
-                Name = "Alexander",
+                StudentId = 32,
+                Name = "Manuel",
                 Surname = "Ale",
                 DateOfBirth = Convert.ToDateTime("20/02/2000")
             };
