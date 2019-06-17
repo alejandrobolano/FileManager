@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace FileManager.Presentation.WinSite
 
         private void FormStudent_Load(object sender, EventArgs e)
         {
-            
+            var val = Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings.Get("TxtPath"), EnvironmentVariableTarget.Machine);
         }
 
         private void ButtonSave_Click(object sender, EventArgs e)

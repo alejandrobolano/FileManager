@@ -27,16 +27,27 @@ namespace FileManager.DataAccess.Dao
         {
             var students = GetAll();
             students.Add(student);
-            if (File.Exists(Helper.NameJson))
+            try
             {
-                File.Delete(Helper.NameJson);
-            }            
-            using (StreamWriter writer = File.AppendText(Helper.NameJson))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(writer, students);
-                Helper.WriteLineConsole("Add student " + student.Name + " to " + Helper.NameJson + " succesfull");
+                if (File.Exists(Helper.NameJson))
+                {
+                    File.Delete(Helper.NameJson);
+                }            
+                using (StreamWriter writer = File.AppendText(Helper.NameJson))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    serializer.Serialize(writer, students);
+                    Helper.WriteLineConsole("Add student " + student.Name + " to " + Helper.NameJson + " succesfull");
+                }
             }
+            catch (Exception e)
+            {
+                using (StreamWriter w = File.AppendText("jsonfile_log.txt"))
+                {
+                    Helper.Log(e.Message, student, w);
+                }
+            }
+           
 
             return Get(student.StudentId);
 

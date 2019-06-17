@@ -16,76 +16,63 @@ namespace FileManager.DataAccess.Dao
     {
        public Student Add(Student student)
         {
-            var doc = CreateXml();
-            Add(doc, student);
+            try
+            {
+                if (!File.Exists(Helper.NameXml))
+                {
+                    XmlWriterSettings xmlSettings = new XmlWriterSettings();
+                    xmlSettings.Indent = true;
+                    xmlSettings.CheckCharacters = true;
+                    xmlSettings.NewLineOnAttributes = true;
+                    using (XmlWriter writer = XmlWriter.Create(Helper.NameXml, xmlSettings))
+                    {
+                        writer.WriteStartDocument();
+                        writer.WriteStartElement("Students");
+                        writer.Flush();
+                        writer.Close();
+                    }
+                }
+                
+                XDocument xml = XDocument.Load(Helper.NameXml);
+                XElement students = xml.Element("Students");
+                students.Add(
+                    new XElement("Student",
+                    new XAttribute("Id", student.StudentId),
+                        new XElement("Name", student.Name),
+                        new XElement("Surname", student.Surname),
+                        new XElement("DateOfBirth", Convert.ToString(student.DateOfBirth))
+                    ));
+                xml.Save(Helper.NameXml);
+
+            }
+            catch (Exception e)
+            {
+                using (StreamWriter w = File.AppendText("xmlfile_log.txt"))
+                {
+                    Helper.Log(e.Message, student, w);
+                }
+            }
+            
             return Get(student.StudentId) ;
-        }
-
-                     
-        public XmlDocument CreateXml()
-        {
-            XmlDocument doc = new XmlDocument();
-            XmlDeclaration xmlDeclaration = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
-            XmlNode root = doc.DocumentElement;            
-            doc.InsertBefore(xmlDeclaration, root);
-            XmlNode element1 = doc.CreateElement("Students");
-            doc.AppendChild(element1);
-            doc.Save(Helper.NameXml);
-            return doc;
-        }
-
-        public void Add(XmlDocument doc, Student student)
-        {
-            XmlNode studentNode = AddNode(doc, student);
-            XmlNode nodoRaiz = doc.DocumentElement;
-            nodoRaiz.InsertAfter(studentNode, nodoRaiz.LastChild);
-            doc.Save(Helper.NameXml);
-        }
-
-        private XmlNode AddNode(XmlDocument doc, Student student)
-        {            
-            XmlNode studentNode = doc.CreateElement("Student");
-            XmlElement xStudentId = doc.CreateElement("StudentId");
-            xStudentId.InnerText = Convert.ToString(student.StudentId);
-            studentNode.AppendChild(xStudentId);
-            XmlElement xName = doc.CreateElement("Name");
-            xName.InnerText = student.Name;
-            studentNode.AppendChild(xName);
-            XmlElement xSurname = doc.CreateElement("Surname");
-            xSurname.InnerText = student.Surname;
-            studentNode.AppendChild(xSurname);
-            XmlElement xDateofBirth = doc.CreateElement("DateOfBirth");
-            xDateofBirth.InnerText = Convert.ToString(student.DateOfBirth);
-            studentNode.AppendChild(xDateofBirth);
-
-            return studentNode;
         }
 
         public Student Get(int studentId)
         {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(Helper.NameXml);
-            XmlNodeList nodeList = doc.SelectNodes("Students/Student");
-            XmlNode studentNode;
-            var studentList = new List<Student>();
-            var student = new Student();
-            for (int i = 0; i < nodeList.Count; i++)
+            XDocument xDoc = XDocument.Load(Helper.NameXml);
+            var studentXml = xDoc.Descendants("Student");
+            
+            Student studentTemp = new Student();
+            List<Student> list = new List<Student>();
+            foreach (var studentNode in studentXml)
             {
-                studentNode = nodeList.Item(i);
-                student.StudentId = Convert.ToInt32(studentNode.SelectSingleNode("StudentId").InnerText);
-                student.Name = studentNode.SelectSingleNode("Name").InnerText;
-                student.Surname = studentNode.SelectSingleNode("Surname").InnerText;
-                student.DateOfBirth = Convert.ToDateTime(studentNode.SelectSingleNode("DateOfBirth").InnerText);
-                studentList.Add(student);
-
+                studentTemp.StudentId = Int32.Parse(studentNode.Attribute("Id").Value);
+                studentTemp.Name = studentNode.Element("Name").Value;
+                studentTemp.Surname = studentNode.Element("Surname").Value;
+                studentTemp.DateOfBirth = DateTime.Parse(studentNode.Element("DateOfBirth").Value);
+                list.Add(studentTemp);
             }
-            /*
-             * var result = from x in studentList
-                        where x.StudentId == studentId
-                        select x;
-            */
-            //result.FirstOrDefault();
-            return studentList.Where(x => x.StudentId == studentId).FirstOrDefault();
+            
+            return list.Where(s => s.StudentId == studentId).FirstOrDefault();
         }
 
 
