@@ -14,17 +14,7 @@ namespace FileManager.DataAccess.Dao
 {
     public class XmlFile : IManageFile
     {
-        public Student GetT(int studentId)
-        {
-            using (StreamReader reader = new StreamReader(Helper.NameXml))
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Student>));
-                var students = (List<Student>)serializer.Deserialize(reader);
-                return students.Where(s => s.StudentId == studentId).FirstOrDefault();
-            }           
-        }
-
-        public Student Add(Student student)
+       public Student Add(Student student)
         {
             var doc = CreateXml();
             Add(doc, student);
@@ -82,7 +72,6 @@ namespace FileManager.DataAccess.Dao
             for (int i = 0; i < nodeList.Count; i++)
             {
                 studentNode = nodeList.Item(i);
-                string dateofbirth = studentNode.SelectSingleNode("DateOfBirth").InnerText;
                 student.StudentId = Convert.ToInt32(studentNode.SelectSingleNode("StudentId").InnerText);
                 student.Name = studentNode.SelectSingleNode("Name").InnerText;
                 student.Surname = studentNode.SelectSingleNode("Surname").InnerText;
