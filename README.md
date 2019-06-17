@@ -19,7 +19,7 @@ Command for version control [Git](https://www.git-scm.com/docs/git/1.7.7)
 Read and write Json with .Net, [Newtonsoft.Json](https://www.luisllamas.es/crear-y-leer-ficheros-json-facilmente-en-c-con-jsonnet/)
 ...more
 
-![Class Diagram](https://github.com/alejandrobolano/FileManager/blob/master/UML-Class%20Diagram.png)
+![Class Diagram](https://github.com/alejandrobolano/FileManager/blob/master/Uml/UML-Class%20Diagram.png)
 ## Tests ⚙️
 
 The app was tested with MSTestv2.
