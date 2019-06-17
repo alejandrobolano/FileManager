@@ -26,7 +26,7 @@ namespace FileManager.DataAccess.Dao
         {
             XmlDocument doc = new XmlDocument();
             XmlDeclaration xmlDeclaration = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
-            XmlNode root = doc.DocumentElement;
+            XmlNode root = doc.DocumentElement;            
             doc.InsertBefore(xmlDeclaration, root);
             XmlNode element1 = doc.CreateElement("Students");
             doc.AppendChild(element1);
@@ -79,11 +79,13 @@ namespace FileManager.DataAccess.Dao
                 studentList.Add(student);
 
             }
-            var result = from x in studentList
+            /*
+             * var result = from x in studentList
                         where x.StudentId == studentId
                         select x;
-
-            return result.FirstOrDefault();
+            */
+            //result.FirstOrDefault();
+            return studentList.Where(x => x.StudentId == studentId).FirstOrDefault();
         }
 
 

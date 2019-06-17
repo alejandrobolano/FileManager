@@ -4,6 +4,7 @@ using FileManager.DataAccess.Dao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
@@ -25,7 +26,7 @@ namespace FileManager.Presentation.WinSite
 
         private void FormStudent_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void ButtonSave_Click(object sender, EventArgs e)

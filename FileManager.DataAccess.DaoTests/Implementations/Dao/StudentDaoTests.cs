@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FileManager.Common.Models;
 using FileManager.Common.Models.Util;
+using System.Configuration;
 
 namespace FileManager.DataAccess.Dao.Tests
 {
@@ -19,7 +20,7 @@ namespace FileManager.DataAccess.Dao.Tests
         {
             student = new Student()
             {
-                StudentId = 99,
+                StudentId = 1,
                 Name = "Lolo",
                 Surname = "Manolo",
                 DateOfBirth = Convert.ToDateTime("10/02/2010")
@@ -28,23 +29,14 @@ namespace FileManager.DataAccess.Dao.Tests
         }
         [TestMethod()]
         [DataRow(EnumType.TXT)]
-        public void AddTxtTest(EnumType type)
-        { 
-            Assert.IsTrue(studentDao.Add(student, type).StudentId == student.StudentId);
-        }
-
-        [TestMethod()]
         [DataRow(EnumType.XML)]
-        public void AddXmlTest(EnumType type)
+        [DataRow(EnumType.JSON)]
+        public void AddTest(EnumType type)
         {
-            Assert.IsTrue(studentDao.Add(student, type).StudentId == student.StudentId);
+            string sAttr = ConfigurationManager.AppSettings.Get("JsonPath");
+            Assert.AreEqual(studentDao.Add(student,type), student);
+            //Assert.IsTrue(studentDao.Add(student, type).StudentId == student.StudentId);
         }
 
-        [TestMethod()]
-        [DataRow(EnumType.JSON)]
-        public void AddJsonTest(EnumType type)
-        {
-            Assert.IsTrue(studentDao.Add(student, type).StudentId == student.StudentId);
-        }
     }
 }
