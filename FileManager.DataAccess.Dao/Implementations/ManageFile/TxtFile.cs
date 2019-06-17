@@ -40,7 +40,8 @@ namespace FileManager.DataAccess.Dao
         public Student Get(int studentId)
         {
             List<string> lines = File.ReadLines(Helper.NameTxt).ToList();
-            return Helper.ConvertStringToStudent(lines.Where(s => s.StartsWith(Convert.ToString(studentId))).FirstOrDefault());          
+            string stream = lines.Where(s => s.StartsWith(Convert.ToString(studentId))).FirstOrDefault();
+            return Helper.ConvertStringToStudent(stream);          
         }
 
         void Write(string logMessage, string message, TextWriter w)
@@ -50,16 +51,6 @@ namespace FileManager.DataAccess.Dao
                 w.WriteLine("{0}", logMessage);
             }            
             w.WriteLine("{0}", message);
-        }
-        string Read(StreamReader r)
-        {
-            string line;
-            string final = "";
-            while ((line = r.ReadLine()) != null)
-            {
-                final = line;
-            }
-            return final;
         }
 
     }
