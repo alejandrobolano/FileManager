@@ -30,8 +30,7 @@ namespace FileManager.DataAccess.Dao.Tests
                 DateOfBirth = Convert.ToDateTime("20/02/2000")
             };
 
-            manageFile.Add(student);
-            Assert.IsTrue(manageFile.Get(student.StudentId).StudentId == student.StudentId);
+            Assert.AreEqual(manageFile.Add(student), student);
         }
     }
 }

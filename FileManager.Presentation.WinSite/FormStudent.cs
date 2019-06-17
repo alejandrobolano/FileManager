@@ -25,7 +25,7 @@ namespace FileManager.Presentation.WinSite
 
         private void FormStudent_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void ButtonSave_Click(object sender, EventArgs e)

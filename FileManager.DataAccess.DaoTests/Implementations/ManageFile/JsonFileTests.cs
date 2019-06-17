@@ -12,27 +12,24 @@ namespace FileManager.DataAccess.Dao.Tests
     [TestClass()]
     public class JsonFileTests
     {
-        private IManageFile manage;
+        private IManageFile manageFile;
 
         public JsonFileTests()
         {
-            manage = new JsonFile();
+            manageFile = new JsonFile();
         }
         [TestMethod()]
         public void AddTest()
         {
             Student student = new Student()
             {
-                StudentId = 84,
+                StudentId = 99,
                 Name = "Alexander",
-                Surname = "Ale",
+                Surname = "Manu",
                 DateOfBirth = Convert.ToDateTime("20/02/2000")
             };
 
-            manage.Add(student);
-            Assert.IsTrue(manage.Get(student.StudentId).StudentId == student.StudentId);
-
-
+             Assert.AreEqual(manageFile.Add(student), student);
         }
     }
 }
