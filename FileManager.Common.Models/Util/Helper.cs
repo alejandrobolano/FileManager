@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,9 @@ namespace FileManager.Common.Models.Util
 {
     public class Helper
     {
-        public static string NameTxt = "Student.txt";
-        public static string NameXml = "Student.xml";
-        public static string NameJson = "Student.json";
+        public static string NameTxt = ConfigurationManager.AppSettings.Get("TxtPath");
+        public static string NameXml = ConfigurationManager.AppSettings.Get("XmlPath");
+        public static string NameJson = ConfigurationManager.AppSettings.Get("JsonPath");
       
         public static void WriteLineConsole(string message)
         {

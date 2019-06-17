@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FileManager.Common.Models;
 using FileManager.Common.Models.Util;
+using System.Configuration;
 
 namespace FileManager.DataAccess.Dao.Tests
 {
@@ -32,6 +33,7 @@ namespace FileManager.DataAccess.Dao.Tests
         [DataRow(EnumType.JSON)]
         public void AddTest(EnumType type)
         {
+            string sAttr = ConfigurationManager.AppSettings.Get("JsonPath");
             Assert.AreEqual(studentDao.Add(student,type), student);
             //Assert.IsTrue(studentDao.Add(student, type).StudentId == student.StudentId);
         }
