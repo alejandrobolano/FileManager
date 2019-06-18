@@ -11,5 +11,6 @@ namespace FileManager.DataAccess.Dao
     {
         Student Add(Student student);
         Student Get(int studentId);
+        Student Update(Student student, int studentId);
     }
 }

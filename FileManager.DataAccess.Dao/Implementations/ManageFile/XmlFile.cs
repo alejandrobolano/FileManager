@@ -75,7 +75,9 @@ namespace FileManager.DataAccess.Dao
             return list.Where(s => s.StudentId == studentId).FirstOrDefault();
         }
 
-
-
+        public Student Update(Student student, int studentId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

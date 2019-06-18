@@ -46,11 +46,9 @@ namespace FileManager.DataAccess.Dao
                 {
                     Helper.Log(e.Message, student, w);
                 }
-            }
-           
+            }           
 
             return Get(student.StudentId);
-
         }
 
         public List<Student> GetAll()
@@ -66,8 +64,12 @@ namespace FileManager.DataAccess.Dao
                 return JsonConvert.DeserializeObject<List<Student>>(json);
                 
                 }
-            }
-            
+            }            
+        }
+
+        public Student Update(Student student, int studentId)
+        {
+            throw new NotImplementedException();
         }
     }
 }
