@@ -14,7 +14,7 @@ namespace FileManager.DataAccess.Dao
     {
         public Student Get(int studentId)
         {
-            string path = Helper.NameJson;
+            string path = Helper.NAMEJSON;
             using (StreamReader jsonStream = File.OpenText(path))
             {
                 var json = jsonStream.ReadToEnd();
@@ -25,49 +25,57 @@ namespace FileManager.DataAccess.Dao
 
         public Student Add(Student student)
         {
-            var students = GetAll();
-            students.Add(student);
             try
             {
-                if (File.Exists(Helper.NameJson))
-                {
-                    File.Delete(Helper.NameJson);
-                }            
-                using (StreamWriter writer = File.AppendText(Helper.NameJson))
-                {
-                    JsonSerializer serializer = new JsonSerializer();
-                    serializer.Serialize(writer, students);
-                    Helper.WriteLineConsole("Add student " + student.Name + " to " + Helper.NameJson + " succesfull");
-                }
+                AddNode(student);
             }
-            catch (Exception e)
+            catch (FileLoadException e)
             {
-                using (StreamWriter w = File.AppendText("jsonfile_log.txt"))
-                {
-                    Helper.Log(e.Message, student, w);
-                }
+                Log(student, e);
+                throw;
             }
-           
+            catch (FileNotFoundException e)
+            {
+                Log(student, e);
+                throw;
+            }
 
             return Get(student.StudentId);
-
         }
 
-        public List<Student> GetAll()
+        private static void Log(Student student, Exception e)
         {
-            if (!File.Exists(Helper.NameJson))
-                return new List<Student>();
-            else
+            using (StreamWriter w = File.AppendText("jsonfile_log.txt"))
             {
-                string path = Helper.NameJson;
-                using (StreamReader jsonStream = File.OpenText(path))
-                {
-                var json = jsonStream.ReadToEnd();
-                return JsonConvert.DeserializeObject<List<Student>>(json);
-                
-                }
+                Helper.Log(e.Message, student, w);
             }
-            
+        }
+
+        private static void AddNode(Student student)
+        {
+            var json = File.ReadAllText(Helper.NAMEJSON);
+            var studentList = JsonConvert.DeserializeObject<List<Student>>(json) ?? new List<Student>();
+            studentList.Add(student);
+            json = ToListJson(studentList);
+        }
+
+        private static string ToListJson(List<Student> studentList)
+        {
+            string json = JsonConvert.SerializeObject(studentList, new JsonSerializerSettings());
+            File.WriteAllText(Helper.NAMEJSON, json);
+            return json;
+        }
+
+        public Student Update(Student student, int studentId)
+        {
+            var json = File.ReadAllText(Helper.NAMEJSON);
+            var studentList = JsonConvert.DeserializeObject<List<Student>>(json) ?? new List<Student>();
+            int pos = studentList.FindIndex(s => s.StudentId == studentId);
+            studentList.RemoveAt(pos);
+            studentList.Insert(pos, student);
+            json = ToListJson(studentList);
+
+            return Get(studentId);
         }
     }
 }

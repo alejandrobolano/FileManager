@@ -16,7 +16,7 @@ namespace FileManager.Presentation.WinSite
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormStudent());
+            Application.Run(new FormAirports());
         }
     }
 }

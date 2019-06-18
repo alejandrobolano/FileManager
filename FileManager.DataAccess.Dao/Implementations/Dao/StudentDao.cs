@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using FileManager.Common.Models;
 using FileManager.Common.Models.Util;
 using FileManager.DataAccess.Dao;
+using FileManager.DataAccess.Dao.Contracts.Factory;
+using FileManager.DataAccess.Dao.Implementations.Factory;
 using static FileManager.Common.Models.Util.Helper;
 
 namespace FileManager.DataAccess.Dao
@@ -20,20 +22,23 @@ namespace FileManager.DataAccess.Dao
 
         private IManageFile GetManageFile(EnumType fileType)
         {
-            IAbstractFactory abstractFactory = new AbstractFactory();
+            IStudentFactory abstractFactory;
             switch (fileType)
             {
                 case EnumType.TXT:
                     {
-                        return abstractFactory.CreateTxtFile();
+                        abstractFactory = new TxtFactory();
+                        return abstractFactory.Create();
                     }
                 case EnumType.XML:
                     {
-                        return abstractFactory.CreateXmlFile();
+                        abstractFactory = new XmlFactory();
+                        return abstractFactory.Create();
                     }
                 default:
                     {
-                        return abstractFactory.CreateJsonFile();
+                        abstractFactory = new JsonFactory();
+                        return abstractFactory.Create();
                     }
 
             }

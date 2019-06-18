@@ -18,32 +18,11 @@ namespace FileManager.DataAccess.Dao
         {
             try
             {
-                if (!File.Exists(Helper.NameXml))
+                if (!File.Exists(Helper.NAMEXML))
                 {
-                    XmlWriterSettings xmlSettings = new XmlWriterSettings();
-                    xmlSettings.Indent = true;
-                    xmlSettings.CheckCharacters = true;
-                    xmlSettings.NewLineOnAttributes = true;
-                    using (XmlWriter writer = XmlWriter.Create(Helper.NameXml, xmlSettings))
-                    {
-                        writer.WriteStartDocument();
-                        writer.WriteStartElement("Students");
-                        writer.Flush();
-                        writer.Close();
-                    }
+                    XmlSettings();
                 }
-                
-                XDocument xml = XDocument.Load(Helper.NameXml);
-                XElement students = xml.Element("Students");
-                students.Add(
-                    new XElement("Student",
-                    new XAttribute("Id", student.StudentId),
-                        new XElement("Name", student.Name),
-                        new XElement("Surname", student.Surname),
-                        new XElement("DateOfBirth", Convert.ToString(student.DateOfBirth))
-                    ));
-                xml.Save(Helper.NameXml);
-
+                AddNode(student);
             }
             catch (Exception e)
             {
@@ -51,31 +30,67 @@ namespace FileManager.DataAccess.Dao
                 {
                     Helper.Log(e.Message, student, w);
                 }
-            }
-            
+                throw;
+            }            
             return Get(student.StudentId) ;
+        }
+
+        private static void AddNode(Student student)
+        {
+            XDocument xml = XDocument.Load(Helper.NAMEXML);
+            XElement students = xml.Element("Students");
+            students.Add(
+                new XElement("Student",
+                new XAttribute("Id", student.StudentId),
+                    new XElement("Name", student.Name),
+                    new XElement("Surname", student.Surname),
+                    new XElement("DateOfBirth", Convert.ToString(student.DateOfBirth))
+                ));
+            xml.Save(Helper.NAMEXML);
+        }
+
+        private static void XmlSettings()
+        {
+            XmlWriterSettings xmlSettings = new XmlWriterSettings();
+            xmlSettings.Indent = true;
+            xmlSettings.CheckCharacters = true;
+            xmlSettings.NewLineOnAttributes = true;
+            using (XmlWriter writer = XmlWriter.Create(Helper.NAMEXML, xmlSettings))
+            {
+                writer.WriteStartDocument();
+                writer.WriteStartElement("Students");
+                writer.Flush();
+            }
         }
 
         public Student Get(int studentId)
         {
-            XDocument xDoc = XDocument.Load(Helper.NameXml);
+            XDocument xDoc = XDocument.Load(Helper.NAMEXML);
             var studentXml = xDoc.Descendants("Student");
             
             Student studentTemp = new Student();
             List<Student> list = new List<Student>();
             foreach (var studentNode in studentXml)
             {
-                studentTemp.StudentId = Int32.Parse(studentNode.Attribute("Id").Value);
+                studentTemp.StudentId = Convert.ToInt32(studentNode.Attribute("Id").Value);
                 studentTemp.Name = studentNode.Element("Name").Value;
                 studentTemp.Surname = studentNode.Element("Surname").Value;
-                studentTemp.DateOfBirth = DateTime.Parse(studentNode.Element("DateOfBirth").Value);
+                studentTemp.DateOfBirth = Convert.ToDateTime(studentNode.Element("DateOfBirth").Value);
                 list.Add(studentTemp);
             }
             
             return list.Where(s => s.StudentId == studentId).FirstOrDefault();
         }
 
+        public Student Update(Student student, int studentId)
+        {
+            XDocument xDoc = XDocument.Load(Helper.NAMEXML);
+            var studentXml = xDoc.Descendants("Student");
+            var element = from x in studentXml
+            where Convert.ToInt32(x.Attribute("Id").Value) == studentId
+            select x;
 
-
+            return student;
+        }
     }
 }
