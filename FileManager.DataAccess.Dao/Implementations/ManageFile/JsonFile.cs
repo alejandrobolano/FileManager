@@ -14,7 +14,7 @@ namespace FileManager.DataAccess.Dao
     {
         public Student Get(int studentId)
         {
-            string path = Helper.NameJson;
+            string path = Helper.NAMEJSON;
             using (StreamReader jsonStream = File.OpenText(path))
             {
                 var json = jsonStream.ReadToEnd();
@@ -29,15 +29,15 @@ namespace FileManager.DataAccess.Dao
             students.Add(student);
             try
             {
-                if (File.Exists(Helper.NameJson))
+                if (File.Exists(Helper.NAMEJSON))
                 {
-                    File.Delete(Helper.NameJson);
+                    File.Delete(Helper.NAMEJSON);
                 }            
-                using (StreamWriter writer = File.AppendText(Helper.NameJson))
+                using (StreamWriter writer = File.AppendText(Helper.NAMEJSON))
                 {
                     JsonSerializer serializer = new JsonSerializer();
                     serializer.Serialize(writer, students);
-                    Helper.WriteLineConsole("Add student " + student.Name + " to " + Helper.NameJson + " succesfull");
+                    Helper.WriteLineConsole("Add student " + student.Name + " to " + Helper.NAMEJSON + " succesfull");
                 }
             }
             catch (Exception e)
@@ -46,6 +46,7 @@ namespace FileManager.DataAccess.Dao
                 {
                     Helper.Log(e.Message, student, w);
                 }
+                throw;
             }           
 
             return Get(student.StudentId);
@@ -53,16 +54,15 @@ namespace FileManager.DataAccess.Dao
 
         public List<Student> GetAll()
         {
-            if (!File.Exists(Helper.NameJson))
+            if (!File.Exists(Helper.NAMEJSON))
                 return new List<Student>();
             else
             {
-                string path = Helper.NameJson;
+                string path = Helper.NAMEJSON;
                 using (StreamReader jsonStream = File.OpenText(path))
                 {
-                var json = jsonStream.ReadToEnd();
-                return JsonConvert.DeserializeObject<List<Student>>(json);
-                
+                    var json = jsonStream.ReadToEnd();
+                    return JsonConvert.DeserializeObject<List<Student>>(json);                
                 }
             }            
         }

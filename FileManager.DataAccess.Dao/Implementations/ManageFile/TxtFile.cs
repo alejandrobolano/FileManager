@@ -16,7 +16,7 @@ namespace FileManager.DataAccess.Dao
             try
             {
                 StringBuilder studentString = ConcatStringStudent(student);
-                using (StreamWriter writer = File.AppendText(Helper.NameTxt))
+                using (StreamWriter writer = File.AppendText(Helper.NAMETXT))
                 {
                     Write(studentString.ToString(), writer);
                 }
@@ -44,20 +44,20 @@ namespace FileManager.DataAccess.Dao
 
         public Student Get(int studentId)
         {
-            List<string> lines = File.ReadLines(Helper.NameTxt).ToList();
+            List<string> lines = File.ReadLines(Helper.NAMETXT).ToList();
             string stream = lines.Where(s => s.StartsWith(Convert.ToString(studentId))).FirstOrDefault();
             return Helper.ConvertStringToStudent(stream);          
         }
 
         public Student Update(Student student, int studentId)
         {
-            List<string> lines = File.ReadLines(Helper.NameTxt).ToList();
+            List<string> lines = File.ReadLines(Helper.NAMETXT).ToList();
             string stream = lines.Where(s => s.StartsWith(Convert.ToString(studentId))).FirstOrDefault();
             int pos = lines.FindIndex(s => s.StartsWith(Convert.ToString(studentId)));
             lines.RemoveAt(pos);
             string concatStudent = ConcatStringStudent(student).ToString();
             lines.Insert(pos, concatStudent);
-            File.WriteAllLines(Helper.NameTxt, lines);
+            File.WriteAllLines(Helper.NAMETXT, lines);
             return Get(Helper.ConvertStringToStudent(concatStudent).StudentId);
         }
 
