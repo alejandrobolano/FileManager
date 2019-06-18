@@ -17,6 +17,7 @@ namespace FileManager.Common.Models.Util
         public static string NAMEXML = Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings.Get("XmlPath"), EnvironmentVariableTarget.Machine) + ".xml";
         //public static string NameJson = ConfigurationManager.AppSettings.Get("JsonPath");
         public static string NAMEJSON = Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings.Get("JsonPath"), EnvironmentVariableTarget.Machine) + ".json";
+        public static string AIRPORTPATH = ConfigurationManager.AppSettings.Get("AirportPath");
 
         public static void WriteLineConsole(string message)
         {
@@ -45,6 +46,15 @@ namespace FileManager.Common.Models.Util
             w.WriteLine("{0}", student.Name);
             w.WriteLine("{0}", student.Surname);
             w.WriteLine("{0}", student.DateOfBirth);
+            w.WriteLine("-------------------------------");
+        }
+
+        public static void Log(string logMessage, TextWriter w)
+        {
+            w.Write("\r\nLog Entry : ");
+            w.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString());
+            w.WriteLine("  :");
+            w.WriteLine("{0}", logMessage);
             w.WriteLine("-------------------------------");
         }
     }

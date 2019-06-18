@@ -45,7 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\Dao\IAirportDao.cs" />
+    <Compile Include="Contracts\Dao\SingletonAirports.cs" />
     <Compile Include="Contracts\Factory\IStudentFactory.cs" />
+    <Compile Include="Implementations\Dao\AirportDao.cs" />
     <Compile Include="Implementations\Factory\JsonFactory.cs" />
     <Compile Include="Implementations\Factory\TxtFactory.cs" />
     <Compile Include="Contracts\ManageFile\IManageFile.cs" />
