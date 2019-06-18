@@ -72,10 +72,10 @@ namespace FileManager.DataAccess.Dao
             List<Student> list = new List<Student>();
             foreach (var studentNode in studentXml)
             {
-                studentTemp.StudentId = Int32.Parse(studentNode.Attribute("Id").Value);
+                studentTemp.StudentId = Convert.ToInt32(studentNode.Attribute("Id").Value);
                 studentTemp.Name = studentNode.Element("Name").Value;
                 studentTemp.Surname = studentNode.Element("Surname").Value;
-                studentTemp.DateOfBirth = DateTime.Parse(studentNode.Element("DateOfBirth").Value);
+                studentTemp.DateOfBirth = Convert.ToDateTime(studentNode.Element("DateOfBirth").Value);
                 list.Add(studentTemp);
             }
             
@@ -84,7 +84,13 @@ namespace FileManager.DataAccess.Dao
 
         public Student Update(Student student, int studentId)
         {
-            throw new NotImplementedException();
+            XDocument xDoc = XDocument.Load(Helper.NAMEXML);
+            var studentXml = xDoc.Descendants("Student");
+            var element = from x in studentXml
+            where Convert.ToInt32(x.Attribute("Id").Value) == studentId
+            select x;
+
+            return student;
         }
     }
 }
