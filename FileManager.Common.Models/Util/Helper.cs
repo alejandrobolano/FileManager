@@ -11,12 +11,12 @@ namespace FileManager.Common.Models.Util
     public class Helper
     {
 
-        public static string NameTxt = ConfigurationManager.AppSettings.Get("TxtPath");
-        //Environment.CurrentDirectory = Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings.Get("TxtPath"), EnvironmentVariableTarget.Machine);
-        public static string NameXml = ConfigurationManager.AppSettings.Get("XmlPath");
-        //public static string NameXml = Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings.Get("XmlPath"), EnvironmentVariableTarget.Machine);
-        public static string NameJson = ConfigurationManager.AppSettings.Get("JsonPath");
-            //Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings.Get("JsonPath"), EnvironmentVariableTarget.Machine);
+        //public static string NameTxt = ConfigurationManager.AppSettings.Get("TxtPath");
+        public static string NameTxt = Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings.Get("TxtPath"), EnvironmentVariableTarget.Machine) + ".txt";
+        //public static string NameXml = ConfigurationManager.AppSettings.Get("XmlPath");
+        public static string NameXml = Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings.Get("XmlPath"), EnvironmentVariableTarget.Machine) + ".xml";
+        //public static string NameJson = ConfigurationManager.AppSettings.Get("JsonPath");
+        public static string NameJson = Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings.Get("JsonPath"), EnvironmentVariableTarget.Machine) + ".json";
 
         public static void WriteLineConsole(string message)
         {
