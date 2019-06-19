@@ -36,12 +36,7 @@ namespace FileManager.DataAccess.Dao.Contracts.Dao
             }
         }
 
-        public static IAirportDao GetAirportDao()
-        {
-            return airportDao;
-        }
-
-        public static IDictionary<Airport, List<Airport>> GetDictionaryAirport()
+       public static IDictionary<Airport, List<Airport>> GetDictionaryAirport()
         {
             foreach (var item in airportDao.Airports())
             {

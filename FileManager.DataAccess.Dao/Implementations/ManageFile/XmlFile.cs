@@ -66,20 +66,19 @@ namespace FileManager.DataAccess.Dao
         public Student Get(int studentId)
         {
             XDocument xDoc = XDocument.Load(Helper.NAMEXML);
-            var studentXml = xDoc.Descendants("Student");
-            
-            Student studentTemp = new Student();
-            List<Student> list = new List<Student>();
-            foreach (var studentNode in studentXml)
-            {
-                studentTemp.StudentId = Convert.ToInt32(studentNode.Attribute("Id").Value);
-                studentTemp.Name = studentNode.Element("Name").Value;
-                studentTemp.Surname = studentNode.Element("Surname").Value;
-                studentTemp.DateOfBirth = Convert.ToDateTime(studentNode.Element("DateOfBirth").Value);
-                list.Add(studentTemp);
-            }
-            
-            return list.Where(s => s.StudentId == studentId).FirstOrDefault();
+            XElement root = xDoc.Root;
+            Student studentResult = new Student();
+            var student = from element in root.Elements("Student")
+                          where element.Attribute("Id").Value.Equals(studentId.ToString())
+                          select element;
+
+            XElement temp = student.First();
+            studentResult.StudentId = Convert.ToInt32(temp.Attribute("Id").Value);
+            studentResult.Name = temp.Element("Name").Value;
+            studentResult.Surname = temp.Element("Surname").Value;
+            studentResult.DateOfBirth = Convert.ToDateTime(temp.Element("DateOfBirth").Value);
+
+            return studentResult;
         }
 
         public Student Update(Student student, int studentId)

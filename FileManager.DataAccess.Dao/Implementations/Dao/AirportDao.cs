@@ -38,11 +38,39 @@ namespace FileManager.DataAccess.Dao.Implementations.Dao
                         listDestination = new List<Airport>();
                         FillField(airportDestination, item);
                         listDestination.Add(airportDestination);
-
                     }
                     airportOrigin.ListAirport = listDestination;
                     list.Add(airportOrigin);
+
                 }
+
+                /*
+                XDocument xDocA = XDocument.Load(Helper.AIRPORTPATH);
+                XElement root = xDocA.Root;
+                IDictionary<Airport, List<Airport>> keyValues = new Dictionary<Airport, List<Airport>>();
+                Airport origin;
+                List<Airport> destinations;
+                Airport destination;
+
+                foreach (var item in root.Elements("Airport"))
+                {
+                    origin = new Airport();
+                    origin.Id = item.Element("Id").Value;
+                    origin.Name = item.Element("Name").Value;
+                    origin.Country = item.Element("Country").Value;
+                    destination = new Airport();                        
+                    foreach (var dest in item.Elements("Destination"))
+                    {
+                        destinations = new List<Airport>();
+                        destination.Id = item.Element("Id").Value;
+                        destination.Name = item.Element("Name").Value;
+                        destination.Country = item.Element("Country").Value;
+                    }
+                    origin.ListAirport.Add(destination);
+                    keyValues.Add(origin, origin.ListAirport);
+                }     
+                */
+                
             }
             catch (FileLoadException e)
             {

@@ -14,7 +14,6 @@ namespace FileManager.Presentation.WinSite
 {
     public partial class FormAirports : Form
     {
-        IAirportDao airportDao;
         IDictionary<Airport, List<Airport>> dictionaryAirport;
         public FormAirports()
         {
@@ -24,7 +23,6 @@ namespace FileManager.Presentation.WinSite
         private void FormAirports_Load(object sender, EventArgs e)
         {
             SingletonAirports singleton = SingletonAirports.Instance;
-            airportDao = SingletonAirports.GetAirportDao();
             dictionaryAirport = SingletonAirports.GetDictionaryAirport();
             comboOrigin.DataSource = dictionaryAirport.Keys.ToList();
             comboOrigin.DisplayMember = "Name";
