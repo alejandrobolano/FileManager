@@ -1,4 +1,5 @@
-﻿using FileManager.DataAccess.Dao.Contracts.Dao;
+﻿using FileManager.Common.Models;
+using FileManager.DataAccess.Dao.Contracts.Dao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace FileManager.Presentation.WinSite
 {
     public partial class FormAirports : Form
     {
+        IAirportDao airportDao;
+        IDictionary<Airport, List<Airport>> dictionaryAirport;
         public FormAirports()
         {
             InitializeComponent();
@@ -21,16 +24,20 @@ namespace FileManager.Presentation.WinSite
         private void FormAirports_Load(object sender, EventArgs e)
         {
             SingletonAirports singleton = SingletonAirports.Instance;
-            IAirportDao airportDao = SingletonAirports.GetAirportDao();
-            foreach (var item in airportDao.Airports())
-            {
-                comboOrigin.Items.Add(item.Name + " " + item.Country + " " + item.Id);
-            }
+            airportDao = SingletonAirports.GetAirportDao();
+            dictionaryAirport = SingletonAirports.GetDictionaryAirport();
+            comboOrigin.DataSource = dictionaryAirport.Keys.ToList();
+            comboOrigin.DisplayMember = "Name";
         }
 
         private void ComboOrigin_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+        {            
+            var airportOrigin = comboOrigin.SelectedItem as Airport;
+            comboDestination.DataSource = airportOrigin.ListAirport;
+            comboDestination.DisplayMember = "Name";
+            var airportDestination = comboDestination.SelectedItem as Airport;
+            label1.Text = "Origin: " + airportOrigin.Id + " " + airportOrigin.Name + " " + airportOrigin.Country + " "
+                + "\nDestination: " + airportDestination.Id + " " + airportDestination.Name + " " + airportDestination.Country;
         }
 
         private void ComboDestination_SelectedIndexChanged(object sender, EventArgs e)
