@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FileManager.Common.Models;
+using FileManager.DataAccess.Dao.Contracts.Dao;
 
 namespace FileManager.DataAccess.Dao.Implementations.Dao.Tests
 {
@@ -17,6 +18,9 @@ namespace FileManager.DataAccess.Dao.Implementations.Dao.Tests
         {
             AirportDao airportDao = new AirportDao();
             airportDao.Airports();
+            //SingletonAirports single1 = SingletonAirports.Instance; 
+            //SingletonAirports single2 = SingletonAirports.Instance; 
+            //Assert.AreEqual(single1.GetGuid().ToString,single2.GetGuid().ToString);
             Assert.Fail();
         }
     }
