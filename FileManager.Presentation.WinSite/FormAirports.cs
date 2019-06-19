@@ -31,7 +31,7 @@ namespace FileManager.Presentation.WinSite
         private void ComboOrigin_SelectedIndexChanged(object sender, EventArgs e)
         {            
             var airportOrigin = comboOrigin.SelectedItem as Airport;
-            comboDestination.DataSource = airportOrigin.ListAirport;
+            comboDestination.DataSource = dictionaryAirport[airportOrigin];
             comboDestination.DisplayMember = "Name";
             var airportDestination = comboDestination.SelectedItem as Airport;
             label1.Text = "Origin: " + airportOrigin.Id + " " + airportOrigin.Name + " " + airportOrigin.Country + " "

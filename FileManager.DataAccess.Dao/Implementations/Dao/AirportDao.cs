@@ -18,14 +18,17 @@ namespace FileManager.DataAccess.Dao.Implementations.Dao
             throw new NotImplementedException();
         }
 
-        public List<Airport> Airports()
+        public IDictionary<Airport, List<Airport>> Airports()
         {
-            Airport airportOrigin;
-            Airport airportDestination;
+            //Airport airportOrigin;
+            //Airport airportDestination;
             List<Airport> list = new List<Airport>();
             List<Airport> listDestination = new List<Airport>();
+
+            IDictionary<Airport, List<Airport>> keyValues = new Dictionary<Airport, List<Airport>>();
             try
             {
+                /*
                 XDocument xDoc = XDocument.Load(Helper.AIRPORTPATH);
                 var airportsXml = xDoc.Descendants("Airport");                
                 foreach (var airportNode in airportsXml)
@@ -43,11 +46,10 @@ namespace FileManager.DataAccess.Dao.Implementations.Dao
                     list.Add(airportOrigin);
 
                 }
-
-                /*
+                */
+              
                 XDocument xDocA = XDocument.Load(Helper.AIRPORTPATH);
                 XElement root = xDocA.Root;
-                IDictionary<Airport, List<Airport>> keyValues = new Dictionary<Airport, List<Airport>>();
                 Airport origin;
                 List<Airport> destinations;
                 Airport destination;
@@ -55,22 +57,17 @@ namespace FileManager.DataAccess.Dao.Implementations.Dao
                 foreach (var item in root.Elements("Airport"))
                 {
                     origin = new Airport();
-                    origin.Id = item.Element("Id").Value;
-                    origin.Name = item.Element("Name").Value;
-                    origin.Country = item.Element("Country").Value;
-                    destination = new Airport();                        
-                    foreach (var dest in item.Elements("Destination"))
+                    ParseXmlToAirport(origin, item);
+                    destination = new Airport();
+                    destinations = new List<Airport>();
+                    foreach (var dest in item.Elements("Airports").Elements("Destination"))
                     {
-                        destinations = new List<Airport>();
-                        destination.Id = item.Element("Id").Value;
-                        destination.Name = item.Element("Name").Value;
-                        destination.Country = item.Element("Country").Value;
+                        ParseXmlToAirport(destination,dest);
+                        destinations.Add(destination);
                     }
-                    origin.ListAirport.Add(destination);
-                    keyValues.Add(origin, origin.ListAirport);
-                }     
-                */
-                
+                    keyValues.Add(origin, destinations);
+                }
+
             }
             catch (FileLoadException e)
             {
@@ -81,8 +78,14 @@ namespace FileManager.DataAccess.Dao.Implementations.Dao
                 throw;
             }
            
+            return keyValues;
+        }
 
-            return list;
+        private static void ParseXmlToAirport(Airport origin, XElement item)
+        {
+            origin.Id = item.Attribute("Id").Value;
+            origin.Name = item.Element("Name").Value;
+            origin.Country = item.Element("Country").Value;
         }
 
         private static void FillField(Airport airportOrigin, XElement airportNode)

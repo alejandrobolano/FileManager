@@ -38,11 +38,13 @@ namespace FileManager.DataAccess.Dao.Contracts.Dao
 
        public static IDictionary<Airport, List<Airport>> GetDictionaryAirport()
         {
+            /*
             foreach (var item in airportDao.Airports())
             {
                 dictionaryAirport.Add(item, item.ListAirport);
             }
-            return dictionaryAirport;
+            */
+            return airportDao.Airports();
         }
             
 }

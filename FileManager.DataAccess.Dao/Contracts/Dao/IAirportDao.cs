@@ -13,7 +13,7 @@ namespace FileManager.DataAccess.Dao.Contracts.Dao
 
             Airport Get();
 
-            List<Airport> Airports();
+            IDictionary<Airport, List<Airport>> Airports();
        
     }
 }

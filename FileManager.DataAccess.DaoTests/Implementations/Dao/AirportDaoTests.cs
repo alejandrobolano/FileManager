@@ -16,7 +16,7 @@ namespace FileManager.DataAccess.Dao.Implementations.Dao.Tests
         public void AirportsTest()
         {
             AirportDao airportDao = new AirportDao();
-            List<Airport> list = airportDao.Airports();
+            airportDao.Airports();
             Assert.Fail();
         }
     }
