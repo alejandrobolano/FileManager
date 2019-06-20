@@ -32,5 +32,19 @@ namespace FileManager.DataAccess.Dao.Tests
 
             Assert.AreEqual(manageFile.Add(student), student);
         }
+
+        [TestMethod()]
+        public void UpdateTest()
+        {
+            Student student = new Student()
+            {
+                StudentId = 46,
+                Name = "Erika",
+                Surname = "Hernandez",
+                DateOfBirth = Convert.ToDateTime("20/02/2000")
+            };
+
+            Assert.AreEqual(manageFile.Update(student,student.StudentId), student);
+        }
     }
 }
