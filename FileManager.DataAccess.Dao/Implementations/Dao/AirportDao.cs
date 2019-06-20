@@ -23,11 +23,14 @@ namespace FileManager.DataAccess.Dao.Implementations.Dao
         public IDictionary<Airport, List<Airport>> Airports()
         {
             /*
-            Assembly a = Assembly.Load("FileManager.Presentation.WinSite");
-            ResourceManager rm = new ResourceManager("FileManager.Presentation.WinSite.FormAirports", a);
-            Console.WriteLine(rm.GetString("origin"));
+            Assembly a = Assembly.Load("FileManager.DataAccess.Dao");
+            ResourceManager rm;
+            if (SingletonAirports.LANG.Equals("en-US"))
+                rm = new ResourceManager("FileManager.DataAccess.Dao.en-US", a);
+            else rm = new ResourceManager("FileManager.DataAccess.Dao.es-ES", a);            
+            Console.WriteLine(rm.GetString("testing"));
             */
-            
+
             IDictionary<Airport, List<Airport>> keyValues = new Dictionary<Airport, List<Airport>>();
             try
             {

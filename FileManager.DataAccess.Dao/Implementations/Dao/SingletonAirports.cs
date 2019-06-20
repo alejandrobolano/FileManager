@@ -1,12 +1,12 @@
 ﻿using FileManager.Common.Models;
-using FileManager.DataAccess.Dao.Implementations.Dao;
+using FileManager.DataAccess.Dao.Contracts.Dao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FileManager.DataAccess.Dao.Contracts.Dao
+namespace FileManager.DataAccess.Dao.Implementations.Dao
 {
     public class SingletonAirports
     {
@@ -15,12 +15,14 @@ namespace FileManager.DataAccess.Dao.Contracts.Dao
         private static IAirportDao airportDao;
         private static IDictionary<Airport, List<Airport>> dictionaryAirport;
         private static Guid guid;
+        public static string LANG { get; set; }
 
         private SingletonAirports()
         {
             guid = new Guid();
             airportDao = new AirportDao();
             dictionaryAirport = airportDao.Airports();
+            LANG = "en-US";
         }
 
         public static SingletonAirports Instance
@@ -38,7 +40,7 @@ namespace FileManager.DataAccess.Dao.Contracts.Dao
             }
         }
 
-       public static IDictionary<Airport, List<Airport>> GetDictionaryAirport()
+        public static IDictionary<Airport, List<Airport>> GetDictionaryAirport()
         {
             return dictionaryAirport;
         }
@@ -47,6 +49,6 @@ namespace FileManager.DataAccess.Dao.Contracts.Dao
         {
             return guid;
         }
-            
-}
+
+    }
 }

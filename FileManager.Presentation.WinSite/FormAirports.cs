@@ -1,5 +1,5 @@
 ﻿using FileManager.Common.Models;
-using FileManager.DataAccess.Dao.Contracts.Dao;
+using FileManager.DataAccess.Dao.Implementations.Dao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +23,7 @@ namespace FileManager.Presentation.WinSite
         public FormAirports()
         {
             language = Properties.Settings.Default.Lang;
+            SingletonAirports.LANG = language;
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);            
             resourceManager = new ComponentResourceManager(typeof(FormAirports));
             InitializeComponent();
