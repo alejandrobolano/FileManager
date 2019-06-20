@@ -33,7 +33,6 @@ namespace FileManager.DataAccess.Dao.Tests
         [DataRow(EnumType.JSON)]
         public void AddTest(EnumType type)
         {
-            string sAttr = ConfigurationManager.AppSettings.Get("JsonPath");
             Assert.AreEqual(studentDao.Add(student,type), student);
             //Assert.IsTrue(studentDao.Add(student, type).StudentId == student.StudentId);
         }
