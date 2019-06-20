@@ -30,7 +30,6 @@ namespace FileManager.DataAccess.Dao.Implementations.Dao
             else rm = new ResourceManager("FileManager.DataAccess.Dao.es-ES", a);            
             Console.WriteLine(rm.GetString("testing"));
             */
-
             IDictionary<Airport, List<Airport>> keyValues = new Dictionary<Airport, List<Airport>>();
             try
             {
@@ -47,7 +46,6 @@ namespace FileManager.DataAccess.Dao.Implementations.Dao
            
             return keyValues;
         }
-
         private static void XmlToDictionary(IDictionary<Airport, List<Airport>> keyValues)
         {
             XDocument xDocA = XDocument.Load(Helper.AIRPORTPATH);
@@ -69,7 +67,6 @@ namespace FileManager.DataAccess.Dao.Implementations.Dao
                 keyValues.Add(origin, destinations);
             }
         }
-
         private static void ParseXmlToAirport(Airport origin, XElement item)
         {
             origin.Id = item.Attribute("Id").Value;
