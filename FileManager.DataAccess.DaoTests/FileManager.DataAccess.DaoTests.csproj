@@ -57,6 +57,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Implementations\Dao\AirportDaoTests.cs" />
     <Compile Include="Implementations\Dao\StudentDaoTests.cs" />
     <Compile Include="Implementations\ManageFile\JsonFileTests.cs" />
     <Compile Include="Implementations\ManageFile\TxtFileTests.cs" />

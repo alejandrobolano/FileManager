@@ -22,7 +22,7 @@ namespace FileManager.Common.Models
 
         public override int GetHashCode()
         {
-            var hashCode = 187117927;
+            var hashCode = 286708227;
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Id);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Name);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Country);

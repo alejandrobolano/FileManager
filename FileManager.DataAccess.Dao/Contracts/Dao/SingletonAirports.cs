@@ -13,10 +13,14 @@ namespace FileManager.DataAccess.Dao.Contracts.Dao
         private static SingletonAirports instance = null;
         private static readonly object padlock = new object();
         private static IAirportDao airportDao;
+        private static IDictionary<Airport, List<Airport>> dictionaryAirport;
+        private static Guid guid;
 
         private SingletonAirports()
         {
+            guid = new Guid();
             airportDao = new AirportDao();
+            dictionaryAirport = airportDao.Airports();
         }
 
         public static SingletonAirports Instance
@@ -34,9 +38,15 @@ namespace FileManager.DataAccess.Dao.Contracts.Dao
             }
         }
 
-        public static IAirportDao GetAirportDao()
+       public static IDictionary<Airport, List<Airport>> GetDictionaryAirport()
         {
-            return airportDao;
+            return dictionaryAirport;
         }
-    }
+
+        public static Guid GetGuid()
+        {
+            return guid;
+        }
+            
+}
 }
