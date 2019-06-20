@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -20,9 +22,12 @@ namespace FileManager.DataAccess.Dao.Implementations.Dao
 
         public IDictionary<Airport, List<Airport>> Airports()
         {
-            List<Airport> list = new List<Airport>();
-            List<Airport> listDestination = new List<Airport>();
-
+            /*
+            Assembly a = Assembly.Load("FileManager.Presentation.WinSite");
+            ResourceManager rm = new ResourceManager("FileManager.Presentation.WinSite.FormAirports", a);
+            Console.WriteLine(rm.GetString("origin"));
+            */
+            
             IDictionary<Airport, List<Airport>> keyValues = new Dictionary<Airport, List<Airport>>();
             try
             {

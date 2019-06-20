@@ -61,6 +61,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAirports.en-US.resx">
+      <DependentUpon>FormAirports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAirports.resx">
       <DependentUpon>FormAirports.cs</DependentUpon>
     </EmbeddedResource>
