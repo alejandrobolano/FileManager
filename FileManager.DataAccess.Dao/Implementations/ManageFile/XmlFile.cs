@@ -85,9 +85,17 @@ namespace FileManager.DataAccess.Dao
         {
             XDocument xDoc = XDocument.Load(Helper.NAMEXML);
             var studentXml = xDoc.Descendants("Student");
+
             var element = from x in studentXml
             where Convert.ToInt32(x.Attribute("Id").Value) == studentId
             select x;
+
+            XElement updateStudent = element.First();
+            updateStudent.Attribute("Id").Value = student.StudentId.ToString();
+            updateStudent.Element("Name").Value = student.Name;
+            updateStudent.Element("Surname").Value = student.Surname;
+            updateStudent.Element("DateOfBirth").Value = student.DateOfBirth.ToString();
+            xDoc.Save(Helper.NAMEXML);
 
             return student;
         }
