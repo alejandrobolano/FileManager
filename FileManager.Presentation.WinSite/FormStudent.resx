@@ -117,4 +117,433 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonSaveTxt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>359, 235</value>
+  </data>
+  <data name="buttonSaveTxt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 45</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonSaveTxt.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonSaveTxt.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;buttonSaveTxt.Name" xml:space="preserve">
+    <value>buttonSaveTxt</value>
+  </data>
+  <data name="&gt;&gt;buttonSaveTxt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonSaveTxt.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonSaveTxt.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="labelStudentId.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelStudentId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 61</value>
+  </data>
+  <data name="labelStudentId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="labelStudentId.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="labelStudentId.Text" xml:space="preserve">
+    <value>StudentId</value>
+  </data>
+  <data name="&gt;&gt;labelStudentId.Name" xml:space="preserve">
+    <value>labelStudentId</value>
+  </data>
+  <data name="&gt;&gt;labelStudentId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelStudentId.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelStudentId.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="labelName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 102</value>
+  </data>
+  <data name="labelName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 20</value>
+  </data>
+  <data name="labelName.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="labelName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="&gt;&gt;labelName.Name" xml:space="preserve">
+    <value>labelName</value>
+  </data>
+  <data name="&gt;&gt;labelName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelName.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="labelSurname.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelSurname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 143</value>
+  </data>
+  <data name="labelSurname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 20</value>
+  </data>
+  <data name="labelSurname.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="labelSurname.Text" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="&gt;&gt;labelSurname.Name" xml:space="preserve">
+    <value>labelSurname</value>
+  </data>
+  <data name="&gt;&gt;labelSurname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSurname.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelSurname.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="labelDateOfBirth.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelDateOfBirth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 182</value>
+  </data>
+  <data name="labelDateOfBirth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 20</value>
+  </data>
+  <data name="labelDateOfBirth.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="labelDateOfBirth.Text" xml:space="preserve">
+    <value>Date of Birth</value>
+  </data>
+  <data name="&gt;&gt;labelDateOfBirth.Name" xml:space="preserve">
+    <value>labelDateOfBirth</value>
+  </data>
+  <data name="&gt;&gt;labelDateOfBirth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelDateOfBirth.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelDateOfBirth.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="textStudentId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 61</value>
+  </data>
+  <data name="textStudentId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 26</value>
+  </data>
+  <data name="textStudentId.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;textStudentId.Name" xml:space="preserve">
+    <value>textStudentId</value>
+  </data>
+  <data name="&gt;&gt;textStudentId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textStudentId.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textStudentId.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="textName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 102</value>
+  </data>
+  <data name="textName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 26</value>
+  </data>
+  <data name="textName.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;textName.Name" xml:space="preserve">
+    <value>textName</value>
+  </data>
+  <data name="&gt;&gt;textName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textName.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="textSurname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 143</value>
+  </data>
+  <data name="textSurname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 26</value>
+  </data>
+  <data name="textSurname.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;textSurname.Name" xml:space="preserve">
+    <value>textSurname</value>
+  </data>
+  <data name="&gt;&gt;textSurname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textSurname.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textSurname.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="textDateOfBirth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 182</value>
+  </data>
+  <data name="textDateOfBirth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 26</value>
+  </data>
+  <data name="textDateOfBirth.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="textDateOfBirth.Text" xml:space="preserve">
+    <value>12/02/1992</value>
+  </data>
+  <data name="&gt;&gt;textDateOfBirth.Name" xml:space="preserve">
+    <value>textDateOfBirth</value>
+  </data>
+  <data name="&gt;&gt;textDateOfBirth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textDateOfBirth.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textDateOfBirth.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="buttonClearFields.Location" type="System.Drawing.Point, System.Drawing">
+    <value>359, 295</value>
+  </data>
+  <data name="buttonClearFields.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 43</value>
+  </data>
+  <data name="buttonClearFields.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="buttonClearFields.Text" xml:space="preserve">
+    <value>Clear Fields</value>
+  </data>
+  <data name="&gt;&gt;buttonClearFields.Name" xml:space="preserve">
+    <value>buttonClearFields</value>
+  </data>
+  <data name="&gt;&gt;buttonClearFields.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonClearFields.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonClearFields.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="radioButtonTxt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonTxt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 225</value>
+  </data>
+  <data name="radioButtonTxt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 24</value>
+  </data>
+  <data name="radioButtonTxt.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="radioButtonTxt.Text" xml:space="preserve">
+    <value>TXT</value>
+  </data>
+  <data name="&gt;&gt;radioButtonTxt.Name" xml:space="preserve">
+    <value>radioButtonTxt</value>
+  </data>
+  <data name="&gt;&gt;radioButtonTxt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonTxt.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;radioButtonTxt.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="radioButtonXML.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonXML.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 265</value>
+  </data>
+  <data name="radioButtonXML.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 24</value>
+  </data>
+  <data name="radioButtonXML.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="radioButtonXML.Text" xml:space="preserve">
+    <value>XML</value>
+  </data>
+  <data name="&gt;&gt;radioButtonXML.Name" xml:space="preserve">
+    <value>radioButtonXML</value>
+  </data>
+  <data name="&gt;&gt;radioButtonXML.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonXML.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;radioButtonXML.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="radioButtonJson.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonJson.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 304</value>
+  </data>
+  <data name="radioButtonJson.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 24</value>
+  </data>
+  <data name="radioButtonJson.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="radioButtonJson.Text" xml:space="preserve">
+    <value>JSON</value>
+  </data>
+  <data name="&gt;&gt;radioButtonJson.Name" xml:space="preserve">
+    <value>radioButtonJson</value>
+  </data>
+  <data name="&gt;&gt;radioButtonJson.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonJson.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;radioButtonJson.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 34</value>
+  </data>
+  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="spanishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 34</value>
+  </data>
+  <data name="spanishToolStripMenuItem.Text" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 34</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 29</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>525, 33</value>
+  </data>
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>es</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 20</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>525, 353</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Form Student</value>
+  </data>
+  <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
+    <value>fileToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;fileToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;languageToolStripMenuItem.Name" xml:space="preserve">
+    <value>languageToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;languageToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;englishToolStripMenuItem.Name" xml:space="preserve">
+    <value>englishToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;englishToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;spanishToolStripMenuItem.Name" xml:space="preserve">
+    <value>spanishToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;spanishToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormStudent</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

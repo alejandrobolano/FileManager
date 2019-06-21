@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStudent));
             this.buttonSaveTxt = new System.Windows.Forms.Button();
             this.labelStudentId = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
@@ -41,135 +42,131 @@
             this.radioButtonTxt = new System.Windows.Forms.RadioButton();
             this.radioButtonXML = new System.Windows.Forms.RadioButton();
             this.radioButtonJson = new System.Windows.Forms.RadioButton();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spanishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonSaveTxt
             // 
-            this.buttonSaveTxt.Location = new System.Drawing.Point(329, 209);
+            resources.ApplyResources(this.buttonSaveTxt, "buttonSaveTxt");
             this.buttonSaveTxt.Name = "buttonSaveTxt";
-            this.buttonSaveTxt.Size = new System.Drawing.Size(143, 45);
-            this.buttonSaveTxt.TabIndex = 0;
-            this.buttonSaveTxt.Text = "Save";
             this.buttonSaveTxt.UseVisualStyleBackColor = true;
             this.buttonSaveTxt.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // labelStudentId
             // 
-            this.labelStudentId.AutoSize = true;
-            this.labelStudentId.Location = new System.Drawing.Point(33, 35);
+            resources.ApplyResources(this.labelStudentId, "labelStudentId");
             this.labelStudentId.Name = "labelStudentId";
-            this.labelStudentId.Size = new System.Drawing.Size(80, 20);
-            this.labelStudentId.TabIndex = 1;
-            this.labelStudentId.Text = "StudentId";
             // 
             // labelName
             // 
-            this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(33, 76);
+            resources.ApplyResources(this.labelName, "labelName");
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(51, 20);
-            this.labelName.TabIndex = 2;
-            this.labelName.Text = "Name";
             // 
             // labelSurname
             // 
-            this.labelSurname.AutoSize = true;
-            this.labelSurname.Location = new System.Drawing.Point(33, 117);
+            resources.ApplyResources(this.labelSurname, "labelSurname");
             this.labelSurname.Name = "labelSurname";
-            this.labelSurname.Size = new System.Drawing.Size(74, 20);
-            this.labelSurname.TabIndex = 3;
-            this.labelSurname.Text = "Surname";
             // 
             // labelDateOfBirth
             // 
-            this.labelDateOfBirth.AutoSize = true;
-            this.labelDateOfBirth.Location = new System.Drawing.Point(33, 156);
+            resources.ApplyResources(this.labelDateOfBirth, "labelDateOfBirth");
             this.labelDateOfBirth.Name = "labelDateOfBirth";
-            this.labelDateOfBirth.Size = new System.Drawing.Size(99, 20);
-            this.labelDateOfBirth.TabIndex = 4;
-            this.labelDateOfBirth.Text = "Date of Birth";
             // 
             // textStudentId
             // 
-            this.textStudentId.Location = new System.Drawing.Point(158, 35);
+            resources.ApplyResources(this.textStudentId, "textStudentId");
             this.textStudentId.Name = "textStudentId";
-            this.textStudentId.Size = new System.Drawing.Size(314, 26);
-            this.textStudentId.TabIndex = 5;
             this.textStudentId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextStudentId_KeyPress);
             // 
             // textName
             // 
-            this.textName.Location = new System.Drawing.Point(158, 76);
+            resources.ApplyResources(this.textName, "textName");
             this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(314, 26);
-            this.textName.TabIndex = 6;
             // 
             // textSurname
             // 
-            this.textSurname.Location = new System.Drawing.Point(158, 117);
+            resources.ApplyResources(this.textSurname, "textSurname");
             this.textSurname.Name = "textSurname";
-            this.textSurname.Size = new System.Drawing.Size(314, 26);
-            this.textSurname.TabIndex = 7;
             // 
             // textDateOfBirth
             // 
-            this.textDateOfBirth.Location = new System.Drawing.Point(158, 156);
+            resources.ApplyResources(this.textDateOfBirth, "textDateOfBirth");
             this.textDateOfBirth.Name = "textDateOfBirth";
-            this.textDateOfBirth.Size = new System.Drawing.Size(314, 26);
-            this.textDateOfBirth.TabIndex = 8;
-            this.textDateOfBirth.Text = "12/02/1992";
             this.textDateOfBirth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextDateOfBirth_KeyPress);
             // 
             // buttonClearFields
             // 
-            this.buttonClearFields.Location = new System.Drawing.Point(329, 269);
+            resources.ApplyResources(this.buttonClearFields, "buttonClearFields");
             this.buttonClearFields.Name = "buttonClearFields";
-            this.buttonClearFields.Size = new System.Drawing.Size(143, 43);
-            this.buttonClearFields.TabIndex = 11;
-            this.buttonClearFields.Text = "Clear Fields";
             this.buttonClearFields.UseVisualStyleBackColor = true;
             this.buttonClearFields.Click += new System.EventHandler(this.ButtonClearFields_Click);
             // 
             // radioButtonTxt
             // 
-            this.radioButtonTxt.AutoSize = true;
-            this.radioButtonTxt.Location = new System.Drawing.Point(158, 199);
+            resources.ApplyResources(this.radioButtonTxt, "radioButtonTxt");
             this.radioButtonTxt.Name = "radioButtonTxt";
-            this.radioButtonTxt.Size = new System.Drawing.Size(63, 24);
-            this.radioButtonTxt.TabIndex = 12;
             this.radioButtonTxt.TabStop = true;
-            this.radioButtonTxt.Text = "TXT";
             this.radioButtonTxt.UseVisualStyleBackColor = true;
             // 
             // radioButtonXML
             // 
-            this.radioButtonXML.AutoSize = true;
-            this.radioButtonXML.Location = new System.Drawing.Point(158, 239);
+            resources.ApplyResources(this.radioButtonXML, "radioButtonXML");
             this.radioButtonXML.Name = "radioButtonXML";
-            this.radioButtonXML.Size = new System.Drawing.Size(67, 24);
-            this.radioButtonXML.TabIndex = 13;
             this.radioButtonXML.TabStop = true;
-            this.radioButtonXML.Text = "XML";
             this.radioButtonXML.UseVisualStyleBackColor = true;
             // 
             // radioButtonJson
             // 
-            this.radioButtonJson.AutoSize = true;
+            resources.ApplyResources(this.radioButtonJson, "radioButtonJson");
             this.radioButtonJson.Checked = true;
-            this.radioButtonJson.Location = new System.Drawing.Point(158, 278);
             this.radioButtonJson.Name = "radioButtonJson";
-            this.radioButtonJson.Size = new System.Drawing.Size(76, 24);
-            this.radioButtonJson.TabIndex = 14;
             this.radioButtonJson.TabStop = true;
-            this.radioButtonJson.Text = "JSON";
             this.radioButtonJson.UseVisualStyleBackColor = true;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Name = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.languageToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
+            // 
+            // languageToolStripMenuItem
+            // 
+            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.englishToolStripMenuItem,
+            this.spanishToolStripMenuItem});
+            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.EnglishToolStripMenuItem_Click);
+            // 
+            // spanishToolStripMenuItem
+            // 
+            this.spanishToolStripMenuItem.Name = "spanishToolStripMenuItem";
+            resources.ApplyResources(this.spanishToolStripMenuItem, "spanishToolStripMenuItem");
+            this.spanishToolStripMenuItem.Click += new System.EventHandler(this.SpanishToolStripMenuItem_Click);
             // 
             // FormStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(525, 353);
             this.Controls.Add(this.radioButtonJson);
             this.Controls.Add(this.radioButtonXML);
             this.Controls.Add(this.radioButtonTxt);
@@ -183,9 +180,12 @@
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelStudentId);
             this.Controls.Add(this.buttonSaveTxt);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormStudent";
-            this.Text = "Form Student";
             this.Load += new System.EventHandler(this.FormStudent_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,6 +206,11 @@
         private System.Windows.Forms.RadioButton radioButtonTxt;
         private System.Windows.Forms.RadioButton radioButtonXML;
         private System.Windows.Forms.RadioButton radioButtonJson;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spanishToolStripMenuItem;
     }
 }
 

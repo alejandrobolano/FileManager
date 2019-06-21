@@ -67,6 +67,9 @@
     <EmbeddedResource Include="FormAirports.resx">
       <DependentUpon>FormAirports.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormStudent.es.resx">
+      <DependentUpon>FormStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormStudent.resx">
       <DependentUpon>FormStudent.cs</DependentUpon>
     </EmbeddedResource>

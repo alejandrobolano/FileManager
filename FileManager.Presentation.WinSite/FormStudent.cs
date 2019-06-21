@@ -11,6 +11,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -19,9 +20,12 @@ namespace FileManager.Presentation.WinSite
 {
     public partial class FormStudent : Form
     {
-        
+        private string language;
+        private ComponentResourceManager resourceManager;
         public FormStudent()
         {
+            language = Properties.Settings.Default.Lang;
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
             InitializeComponent();
         }
 
@@ -100,6 +104,33 @@ namespace FileManager.Presentation.WinSite
                 e.Handled = true;
             }
            
+        }
+
+        private void EnglishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Properties.Settings.Default.Lang.Equals("en-US"))
+            {
+                language = "en-US";
+                ChangeLang(true, false);
+            }
+        }
+
+        private void SpanishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Properties.Settings.Default.Lang.Equals("es-ES"))
+            {
+                language = "es-ES";
+                ChangeLang(false, true);
+            }
+        }
+
+        private void ChangeLang(bool en, bool es)
+        {
+            englishToolStripMenuItem.Checked = en;
+            spanishToolStripMenuItem.Checked = es;
+            Properties.Settings.Default.Lang = language;
+            Properties.Settings.Default.Save();
+            Application.Restart();
         }
     }
 }

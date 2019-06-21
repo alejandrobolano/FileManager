@@ -117,102 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonSaveTxt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 233</value>
-  </data>
-  <data name="buttonSaveTxt.Text" xml:space="preserve">
-    <value>Guardar</value>
-  </data>
-  <data name="labelStudentId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 64</value>
-  </data>
-  <data name="labelStudentId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 20</value>
-  </data>
-  <data name="labelStudentId.Text" xml:space="preserve">
-    <value>Id</value>
-  </data>
-  <data name="labelName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 105</value>
-  </data>
-  <data name="labelName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 20</value>
-  </data>
-  <data name="labelName.Text" xml:space="preserve">
-    <value>Nombre</value>
-  </data>
-  <data name="labelSurname.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 146</value>
-  </data>
-  <data name="labelSurname.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 20</value>
-  </data>
-  <data name="labelSurname.Text" xml:space="preserve">
-    <value>Apellidos</value>
-  </data>
-  <data name="labelDateOfBirth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 185</value>
-  </data>
-  <data name="labelDateOfBirth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 20</value>
-  </data>
-  <data name="labelDateOfBirth.Text" xml:space="preserve">
-    <value>Fecha de nacimiento</value>
-  </data>
-  <data name="textStudentId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 64</value>
-  </data>
-  <data name="textName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 105</value>
-  </data>
-  <data name="textSurname.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 146</value>
-  </data>
-  <data name="textDateOfBirth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 185</value>
-  </data>
-  <data name="buttonClearFields.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 293</value>
-  </data>
-  <data name="buttonClearFields.Text" xml:space="preserve">
-    <value>Borrar Campos</value>
-  </data>
-  <data name="radioButtonTxt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 228</value>
-  </data>
-  <data name="radioButtonXML.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 268</value>
-  </data>
-  <data name="radioButtonJson.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 307</value>
-  </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 29</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Archivo</value>
-  </data>
-  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 34</value>
-  </data>
-  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Lenguaje</value>
-  </data>
-  <data name="spanishToolStripMenuItem.Text" xml:space="preserve">
-    <value>Español</value>
-  </data>
-  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ingles</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Formulario de Estudiantes</value>
-  </data>
-  <data name="studentAdd" xml:space="preserve">
-    <value>Estudiante añadido satisfactoriamente</value>
+  <data name="labelSurname.Text" xml:space="preserve">
+    <value>Apellidos</value>
   </data>
 </root>
