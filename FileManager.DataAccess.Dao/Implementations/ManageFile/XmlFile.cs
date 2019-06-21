@@ -97,7 +97,7 @@ namespace FileManager.DataAccess.Dao
             updateStudent.Element("DateOfBirth").Value = student.DateOfBirth.ToString();
             xDoc.Save(Helper.NAMEXML);
 
-            return student;
+            return Get(student.StudentId);
         }
     }
 }

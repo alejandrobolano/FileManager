@@ -20,7 +20,7 @@ namespace FileManager.DataAccess.Dao.Tests
         {
             student = new Student()
             {
-                StudentId = 1,
+                StudentId = 12,
                 Name = "Lolo",
                 Surname = "Manolo",
                 DateOfBirth = Convert.ToDateTime("10/02/2010")
@@ -33,7 +33,6 @@ namespace FileManager.DataAccess.Dao.Tests
         [DataRow(EnumType.JSON)]
         public void AddTest(EnumType type)
         {
-            string sAttr = ConfigurationManager.AppSettings.Get("JsonPath");
             Assert.AreEqual(studentDao.Add(student,type), student);
             //Assert.IsTrue(studentDao.Add(student, type).StudentId == student.StudentId);
         }
