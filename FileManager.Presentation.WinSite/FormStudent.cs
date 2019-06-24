@@ -16,7 +16,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
-[assembly: log4net.Config.XmlConfigurator(ConfigFile = "App.config", Watch = true)]
 
 namespace FileManager.Presentation.WinSite
 {
@@ -61,6 +60,7 @@ namespace FileManager.Presentation.WinSite
                     iStudentDao.Add(student, EnumType.TXT);
                 }
                 log.Info("This is an info log");
+                ClearFields();
             }
             
 

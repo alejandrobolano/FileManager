@@ -12,11 +12,11 @@ namespace FileManager.Common.Models.Util
     {
 
         //public static string NameTxt = ConfigurationManager.AppSettings.Get("TxtPath");
-        public static string NAMETXT = Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings.Get("TxtPath"), EnvironmentVariableTarget.Machine) + ".txt";
+        public static string NAMETXT = Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings.Get("Path"), EnvironmentVariableTarget.Machine) + ".txt";
         //public static string NameXml = ConfigurationManager.AppSettings.Get("XmlPath");
-        public static string NAMEXML = Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings.Get("XmlPath"), EnvironmentVariableTarget.Machine) + ".xml";
+        public static string NAMEXML = Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings.Get("Path"), EnvironmentVariableTarget.Machine) + ".xml";
         //public static string NameJson = ConfigurationManager.AppSettings.Get("JsonPath");
-        public static string NAMEJSON = Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings.Get("JsonPath"), EnvironmentVariableTarget.Machine) + ".json";
+        public static string NAMEJSON = Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings.Get("Path"), EnvironmentVariableTarget.Machine) + ".json";
         public static string AIRPORTPATH = ConfigurationManager.AppSettings.Get("AirportPath");
 
         public static void WriteLineConsole(string message)

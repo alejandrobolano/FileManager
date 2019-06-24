@@ -39,15 +39,20 @@ namespace FileManager.DataAccess.Dao
                 Log(student, e);
                 throw;
             }
+            catch (AccessViolationException a)
+            {
+                Log(student, a);
+                throw;
+            }
 
             return Get(student.StudentId);
         }
 
-        private static void Log(Student student, Exception e)
+        private static void Log(Student student, Exception exception)
         {
             using (StreamWriter w = File.AppendText("jsonfile_log.txt"))
             {
-                Helper.Log(e.Message, student, w);
+                Helper.Log(exception.Message, student, w);
             }
         }
 

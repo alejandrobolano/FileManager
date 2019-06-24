@@ -68,36 +68,48 @@ namespace FileManager.DataAccess.Dao
             XDocument xDoc = XDocument.Load(Helper.NAMEXML);
             XElement root = xDoc.Root;
             Student studentResult = new Student();
-            var student = from element in root.Elements("Student")
+            var studentList = from element in root.Elements("Student")
                           where element.Attribute("Id").Value.Equals(studentId.ToString())
                           select element;
+            ConvertXElementToStudent(studentResult, studentList);
 
+            return studentResult;
+        }
+
+        private static void ConvertXElementToStudent(Student studentResult, IEnumerable<XElement> student)
+        {
             XElement temp = student.First();
             studentResult.StudentId = Convert.ToInt32(temp.Attribute("Id").Value);
             studentResult.Name = temp.Element("Name").Value;
             studentResult.Surname = temp.Element("Surname").Value;
             studentResult.DateOfBirth = Convert.ToDateTime(temp.Element("DateOfBirth").Value);
-
-            return studentResult;
         }
 
         public Student Update(Student student, int studentId)
         {
             XDocument xDoc = XDocument.Load(Helper.NAMEXML);
             var studentXml = xDoc.Descendants("Student");
+            IEnumerable<XElement> element = FindElement(studentId, studentXml);
+            UpdateElement(student, xDoc, element);
 
-            var element = from x in studentXml
-            where Convert.ToInt32(x.Attribute("Id").Value) == studentId
-            select x;
+            return Get(student.StudentId);
+        }
 
+        private static IEnumerable<XElement> FindElement(int studentId, IEnumerable<XElement> studentXml)
+        {
+            return from x in studentXml
+                   where Convert.ToInt32(x.Attribute("Id").Value) == studentId
+                   select x;
+        }
+
+        private static void UpdateElement(Student student, XDocument xDoc, IEnumerable<XElement> element)
+        {
             XElement updateStudent = element.First();
             updateStudent.Attribute("Id").Value = student.StudentId.ToString();
             updateStudent.Element("Name").Value = student.Name;
             updateStudent.Element("Surname").Value = student.Surname;
             updateStudent.Element("DateOfBirth").Value = student.DateOfBirth.ToString();
             xDoc.Save(Helper.NAMEXML);
-
-            return Get(student.StudentId);
         }
     }
 }

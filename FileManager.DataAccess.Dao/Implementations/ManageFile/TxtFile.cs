@@ -51,13 +51,13 @@ namespace FileManager.DataAccess.Dao
 
         public Student Update(Student student, int studentId)
         {
-            List<string> lines = File.ReadLines(Helper.NAMETXT).ToList();
-            string stream = lines.Where(s => s.StartsWith(Convert.ToString(studentId))).FirstOrDefault();
-            int pos = lines.FindIndex(s => s.StartsWith(Convert.ToString(studentId)));
-            lines.RemoveAt(pos);
+            List<string> linesOfFile = File.ReadLines(Helper.NAMETXT).ToList();
+            string stream = linesOfFile.Where(s => s.StartsWith(Convert.ToString(studentId))).FirstOrDefault();
+            int position = linesOfFile.FindIndex(s => s.StartsWith(Convert.ToString(studentId)));
+            linesOfFile.RemoveAt(position);
             string concatStudent = ConcatStringStudent(student).ToString();
-            lines.Insert(pos, concatStudent);
-            File.WriteAllLines(Helper.NAMETXT, lines);
+            linesOfFile.Insert(position, concatStudent);
+            File.WriteAllLines(Helper.NAMETXT, linesOfFile);
             return Get(Helper.ConvertStringToStudent(concatStudent).StudentId);
         }
 
