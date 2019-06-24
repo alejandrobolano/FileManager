@@ -55,18 +55,24 @@ namespace FileManager.DataAccess.Dao.Implementations.Dao
             Airport destination;
             foreach (var item in root.Elements("Airport"))
             {
-                origin = new Airport();
-                ParseXmlToAirport(origin, item);
-                destination = new Airport();
-                destinations = new List<Airport>();
-                foreach (var dest in item.Elements("Airports").Elements("Destination"))
-                {
-                    ParseXmlToAirport(destination, dest);
-                    destinations.Add(destination);
-                }
-                keyValues.Add(origin, destinations);
+                AddDestinationToOrigin(keyValues, out origin, out destinations, out destination, item);
             }
         }
+
+        private static void AddDestinationToOrigin(IDictionary<Airport, List<Airport>> keyValues, out Airport origin, out List<Airport> destinations, out Airport destination, XElement item)
+        {
+            origin = new Airport();
+            ParseXmlToAirport(origin, item);
+            destination = new Airport();
+            destinations = new List<Airport>();
+            foreach (var dest in item.Elements("Airports").Elements("Destination"))
+            {
+                ParseXmlToAirport(destination, dest);
+                destinations.Add(destination);
+            }
+            keyValues.Add(origin, destinations);
+        }
+
         private static void ParseXmlToAirport(Airport origin, XElement item)
         {
             origin.Id = item.Attribute("Id").Value;

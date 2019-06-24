@@ -16,12 +16,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
+
 namespace FileManager.Presentation.WinSite
 {
     public partial class FormStudent : Form
     {
         private string language;
-        private ComponentResourceManager resourceManager;
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger
+        (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public FormStudent()
         {
             language = Properties.Settings.Default.Lang;
@@ -31,9 +33,9 @@ namespace FileManager.Presentation.WinSite
 
         private void FormStudent_Load(object sender, EventArgs e)
         {
-            var val = Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings.Get("TxtPath"), EnvironmentVariableTarget.Machine);
+            log.Info("This is an info log");
+            log.Error("This is my error");
         }
-
         private void ButtonSave_Click(object sender, EventArgs e)
         {
             if(!CheckEmptyFields())
@@ -57,12 +59,19 @@ namespace FileManager.Presentation.WinSite
                 {
                     iStudentDao.Add(student, EnumType.TXT);
                 }
+                log.Info("This is an info log");
+                ClearFields();
             }
             
 
         }
 
         private void ButtonClearFields_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+        }
+
+        private void ClearFields()
         {
             foreach (var control in Controls)
             {
