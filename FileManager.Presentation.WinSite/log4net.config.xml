@@ -1,6 +1,6 @@
 ﻿<log4net debug="false">
   <appender name="RollingFile" type="log4net.Appender.RollingFileAppender">
-    <file value="C:\Users\alejandrobm\Documents\FileManager\Dev\Logs\student.log" />
+    <file value="student-winsite.log" />
     <threshold value="ALL" />
     <appendToFile value="true" />
     <rollingStyle value="Composite" />
@@ -39,12 +39,12 @@
   <appender name="SmtpAppender" type="log4net.Appender.SmtpAppender,log4net">
     <threshold value="ERROR" />
     <to value="alejandro.bolano.336@gmail.com" />
-    <from value="alejandrobm@gmx.com" />
+    <from value="alejandro.bolano.dev@gmail.com" />
     <subject value="log4net err msg - Form Student app example" />
-    <smtpHost value="mail.gmx.com" />
+    <smtpHost value="gmail.com" />
     <port value="465"/>
     <authentication value="Basic" />
-    <username value="alejandrobm@gmx.com"/>
+    <username value="alejandro.bolano.dev@gmail.com"/>
     <password value="Qwerty78*"/>
     <EnableSsl value="false" />
     <bufferSize value="1" />

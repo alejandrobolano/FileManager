@@ -150,13 +150,13 @@
     <value>35, 61</value>
   </data>
   <data name="labelStudentId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 20</value>
+    <value>23, 20</value>
   </data>
   <data name="labelStudentId.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="labelStudentId.Text" xml:space="preserve">
-    <value>StudentId</value>
+    <value>Id</value>
   </data>
   <data name="&gt;&gt;labelStudentId.Name" xml:space="preserve">
     <value>labelStudentId</value>
@@ -494,9 +494,6 @@
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>es</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

@@ -61,8 +61,7 @@ namespace FileManager.Presentation.WinSite
                 }
                 log.Info("This is an info log");
                 ClearFields();
-            }
-            
+            }            
 
         }
 
