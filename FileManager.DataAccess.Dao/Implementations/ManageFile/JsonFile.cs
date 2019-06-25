@@ -12,6 +12,9 @@ namespace FileManager.DataAccess.Dao
 {
     public class JsonFile : IManageFile
     {
+        private static readonly log4net.ILog LOG = log4net.LogManager.GetLogger
+        (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public Student Get(int studentId)
         {
             string path = Helper.NAMEJSON;
@@ -28,20 +31,24 @@ namespace FileManager.DataAccess.Dao
             try
             {
                 AddNode(student);
+                LOG.Info(student.Name);
             }
             catch (FileLoadException e)
             {
-                Log(student, e);
+                //Log(student, e);
+                LOG.Error(e + student.Name);
                 throw;
             }
             catch (FileNotFoundException e)
             {
-                Log(student, e);
+                //Log(student, e);
+                LOG.Error(e + student.Name);
                 throw;
             }
             catch (AccessViolationException a)
             {
-                Log(student, a);
+                //Log(student, a);
+                LOG.Error(a + student.Name);
                 throw;
             }
 
