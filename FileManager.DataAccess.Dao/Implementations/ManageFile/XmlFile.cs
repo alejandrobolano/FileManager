@@ -14,7 +14,9 @@ namespace FileManager.DataAccess.Dao
 {
     public class XmlFile : IManageFile
     {
-       public Student Add(Student student)
+        private static readonly log4net.ILog LOG = log4net.LogManager.GetLogger
+        (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        public Student Add(Student student)
         {
             try
             {
@@ -23,13 +25,15 @@ namespace FileManager.DataAccess.Dao
                     XmlSettings();
                 }
                 AddNode(student);
+                LOG.Info(student.Name);
             }
             catch (Exception e)
             {
-                using (StreamWriter w = File.AppendText("xmlfile_log.txt"))
-                {
-                    Helper.Log(e.Message, student, w);
-                }
+                //using (StreamWriter w = File.AppendText("xmlfile_log.txt"))
+                //{
+                //    Helper.Log(e.Message, student, w);
+                //}
+                LOG.Error(e + student.Name);
                 throw;
             }            
             return Get(student.StudentId) ;

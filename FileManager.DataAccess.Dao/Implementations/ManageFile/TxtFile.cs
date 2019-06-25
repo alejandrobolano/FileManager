@@ -10,7 +10,10 @@ using FileManager.Common.Models.Util;
 namespace FileManager.DataAccess.Dao
 {
     public class TxtFile : IManageFile
-    {        
+    {
+        private static readonly log4net.ILog LOG = log4net.LogManager.GetLogger
+        (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public Student Add(Student student)
         {
             try
@@ -20,13 +23,15 @@ namespace FileManager.DataAccess.Dao
                 {
                     Write(studentString.ToString(), writer);
                 }
+                LOG.Info(student.Name);
             }
             catch (Exception e)
             {
-                using (StreamWriter w = File.AppendText("txtfile_log.txt"))
-                {
-                    Helper.Log(e.Message, student, w);
-                }
+                //using (StreamWriter w = File.AppendText("txtfile_log.txt"))
+                //{
+                //    Helper.Log(e.Message, student, w);
+                //}
+                LOG.Error(e + student.Name);
             }
 
             return Get(student.StudentId);

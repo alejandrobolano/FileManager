@@ -117,11 +117,74 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+  <data name="buttonSaveTxt.Text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="labelStudentId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 63</value>
+  </data>
+  <data name="labelStudentId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="labelStudentId.Text" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="labelName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 104</value>
+  </data>
+  <data name="labelName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 20</value>
+  </data>
+  <data name="labelName.Text" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="labelSurname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 145</value>
+  </data>
+  <data name="labelSurname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 20</value>
   </data>
   <data name="labelSurname.Text" xml:space="preserve">
     <value>Apellidos</value>
+  </data>
+  <data name="labelDateOfBirth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 184</value>
+  </data>
+  <data name="labelDateOfBirth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 20</value>
+  </data>
+  <data name="labelDateOfBirth.Text" xml:space="preserve">
+    <value>Fecha de Nacimiento</value>
+  </data>
+  <data name="buttonClearFields.Text" xml:space="preserve">
+    <value>Borrar campos</value>
+  </data>
+  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
+    <value>Inglés</value>
+  </data>
+  <data name="spanishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="spanishToolStripMenuItem.Text" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lenguaje</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 29</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Archivo</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Formulario de Estudiante</value>
   </data>
 </root>
