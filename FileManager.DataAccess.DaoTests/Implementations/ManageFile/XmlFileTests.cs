@@ -24,7 +24,7 @@ namespace FileManager.DataAccess.Dao.Tests
         {
             Student student = new Student()
             {
-                StudentId = 99,
+                StudentId = 100,
                 Name = "Alber",
                 Surname = "Alexandro",
                 DateOfBirth = Convert.ToDateTime("20/02/2000")
@@ -39,7 +39,7 @@ namespace FileManager.DataAccess.Dao.Tests
         {
             Student student = new Student()
             {
-                StudentId = 99,
+                StudentId = 100,
                 Name = name,
                 Surname = surname,
                 DateOfBirth = Convert.ToDateTime(dateofbirth)

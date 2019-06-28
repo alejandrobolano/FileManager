@@ -23,7 +23,7 @@ namespace FileManager.DataAccess.Dao.Tests
         {
             Student student = new Student()
             {
-                StudentId = 101,
+                StudentId = 102,
                 Name = "Aleer",
                 Surname = "Fulolaas",
                 DateOfBirth = Convert.ToDateTime("20/02/2000")
@@ -37,9 +37,9 @@ namespace FileManager.DataAccess.Dao.Tests
         {
             Student student = new Student()
             {
-                StudentId = 99,
+                StudentId = 102,
                 Name = "Alberto",
-                Surname = "Mana",
+                Surname = "MANAA",
                 DateOfBirth = Convert.ToDateTime("28/02/2000")
             };
             Assert.AreEqual(manageFile.Update(student, student.StudentId), student);
